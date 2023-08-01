@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+@font-face{
+    font-family: Nanum Barun Gothic;
+    font-style: normal;
+    font-weight: 700;
+    src: url(../font/NanumBarunGothic-Bold.woff);
+}
+@font-face{
+    font-family: Nanum Barun Gothic;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/NanumBarunGothic-Regular.woff);
+}
+    /*@font-face = 글씨체 추가하기, font-family = 글씨체 선택*/
+
+html, body{font-family: 'Nanum Barun Gothic', sans-serif;}/*sans-serif는 다음 시간에*/
+
+

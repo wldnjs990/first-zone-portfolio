@@ -1,0 +1,11 @@
+@charset "UTF8";
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    src:url('../font/NanumGothic.otf') format('woff'),
+        url('../font/NanumGothicBold.otf') format('woff'),
+        url('../font/NanumGothicExtraBold.otf') format('woff'),
+        url('../font/NanumGothicLight.otf') format('woff');
+    /* 이런식으로 weight를 지정해서 사용할 수도 있다!*/
+    font-weight: 400;
+} 

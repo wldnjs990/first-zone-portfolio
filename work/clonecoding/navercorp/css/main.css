@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/*--main_content-----------------------*/
+.main_content{padding: 0 150px 120px;}
+/*--content_service*/
+.content_service{margin-top: 98px;}
+.service_list{font-size: 0;}
+.service_list > li{
+    overflow: hidden; display: inline-block; position: relative;
+    width: 33.33%; padding-bottom:25%;
+    background:aqua no-repeat 50%; background-size: cover;
+}
+.service_list > li:nth-child(1){background-image: url(../img/img_main_content13.png);}
+.service_list > li:nth-child(2){background-image: url(../img/img_main_content14.png);}
+.service_list > li:nth-child(3){background-image: url(../img/img_main_content15.png);}
+.service_list > li:nth-child(4){background-image: url(../img/img_main_content16.png);}
+.service_list > li:nth-child(5){background-image: url(../img/img_main_content17.png);}
+.service_list > li:nth-child(6){background-image: url(../img/img_main_content18.png);}
+.service_list > li:nth-child(7){background-image: url(../img/img_main_content19.png);}
+.service_list > li:nth-child(8){background-image: url(../img/img_main_content20.png);}
+.service_list > li:nth-child(9){background-image: url(../img/img_main_content21.png);}
+.service_list > li:hover a{opacity: 1;}
+.service_list > li:hover dl{transform: translateY(0);}
+.service_list a{
+    font-size: 16px; display: block; position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; background-color: #3a3a5080;
+    font-size: 15px; opacity: 0; transition: opacity .3s;
+}
+.service_list dl{
+    position: absolute; left: 0; bottom: 30px; width: 100%; color: #fff; padding-top: 50px; 
+    padding-left: 30px; transform: translateY(100px); transition: all .3s;
+}
+.service_list dl::before{
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 23px; height: 23px;
+    background: url(../img/sprite.png)no-repeat; background-size: 474px 1500px;
+    background-position: -199px -129px; left: 30px;
+}
+.service_list dt{font-family: 'NanumSquare-EB'; font-size: 22px; margin-bottom: 2px;}
+/*--텍스트 글자 수 제한 걸기--------------------------------*/
+.service_list dd{
+    width: 40%;
+    text-overflow: ellipsis; overflow: hidden; white-space:nowrap;
+}
+/*--//텍스트 글자 수 제한 걸기--------------------------------*/
+/*-----------------------------------------------*/
+    /*--content_summary---------------------*/
+    .content_summary{margin-top: 69px;}
+    .content_summary::after{content: ''; display: block; clear: both;}
+    .content_summary li{
+        position: relative; float: left; width: 26.6%; padding: 0 50px;
+        }
+    .content_summary li:first-child::before{width: 0;}
+    .content_summary li:first-child{padding-left: 0; width: 26.6%;}
+    .content_summary li:last-child{padding-right: 0; width: 20%;}
+    .content_summary li::before{
+        content: ''; position: absolute; left: 0; top: 0; width: 1px; height: 100%; background-color: #efefef;
+    }
+    .content_summary li h3{font-family: 'NanumSquare-EB'; font-size: 14px; color: #222222;}
+    .content_summary li > a{
+        background-color: aqua;
+        position: relative; padding-right: 32px;
+        font-family:'NanumSquare-B'; font-size: 15px;
+    }
+    .content_summary li a > span{
+        display: block; position: absolute; right: 0; top: 0;
+        width: 18px; height: 18px; background-color: #00c73c; border-radius: 50px;
+    }
+    .content_summary li a > span::before{
+        content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        width: 5px; height: 8px; background-color: #000; background: url(../img/sprite.png) no-repeat;
+        background-position: -102px -50px;
+    }
+    .content_summary li a:hover span::before{background-position: -108px, -49px; width: 6px; height: 9px; }
+    /*---------------*/
+    .content_summary .news_box{width: 100%; margin: 31px 0 20px;}
+    .content_summary .news_box strong{
+        display: block; font-family: 'NanumSquare-B'; text-overflow: ellipsis;
+        overflow: hidden; white-space: nowrap;
+    }
+    .content_summary .text_box{margin: 31px 0 50px; font-family: 'NanumSquare-EB'; font-size: 18px;}
+    .news_box p{
+        margin-top: 10px; -webkit-margin-top: 10px; font-size: 15px; color: #888; line-height: 1.6;
+        display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; -webkit-line-clamp: 2;
+        word-break: break-all; 
+    }
+    /*- -webkit- : 크롬, 사파리 브라우저에게 알아들으라고 강조시키는 수식어
+        line-clamp : 줄 갯수
+        word-break : 단어 부수기
+    ---*/
+    .text_box{margin: 33px 0 56px; font-family: 'NanumSquare-EB'; font-size: 18px; line-height: 1.42;}
+    .stock_box{margin: 30px 0 24px;}
+    .stock_box > p{
+        text-align: right; font-family: 'NanumSquare-L'; font-size: 12px; color: #888; margin-top: 13px;
+    }
+    .price_box{position: relative; padding-bottom: 53px;}
+    .price_box::before{
+        content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: #333;
+    }
+    .price_box p{float: left; font-family: 'NanumSquare-EB'; font-size: 36px; letter-spacing: -1.3px;}
+    .price_box p::after{content: '원'; font-size: 13px; font-size: 'NanumSquare-B';}
+    .price_box span{float: right; font-size: 14px; position: relative; margin-top: 19px; padding-left: 18px;}
+    /*----------------------*/
+    .price_box span::before{
+        content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 6px; margin-top: -2px;
+        background:url(../img/sprite.png)-318px -26px no-repeat; background-size: 474px 1500px;
+    }
+    .price_box .type1::before{background-position: -318px -26px;}
+    .price_box .type2::before{background-position: -318px -28px;}
+    /*-----------------*/
+    @media only screen and (max-width:1600px) {
+        .content_summary li{padding-left: 20px; padding-right: 20px;}
+        .content_summary li:last-child > a{padding-right: 30px;}
+        .text_box br{display: none;}
+        .text_box{margin: 33px 0 27px;}
+        .price_box p{font-size: 28px;}
+        .price_box span{margin-top: 10px;}
+        .price_box{padding-bottom: 40px;}
+        .stock_box{margin: 30px 0 38px;}
+        /**/
+        .support_list dd > span{display: inline;}
+        .support_list li a{padding: 135px 5px 0;}
+    }
+        /*--//content_summary-------------------*/
+        .content_support{margin-top: 112px; text-align: center;}
+        .support_info h3{margin-bottom: 17px; font-family: 'NanumSquare-B'; font-size: 32px; color: #212121}
+        .support_info p{margin-bottom: 134px; font-size: 18px; line-height: 1.6;}
+        /*--------------------------*/
+        .support_list{max-width: 1360px; margin: 0 auto;}
+        .support_list::after{content: ''; display: block; clear: both;}/*clear:both = 경계를 만드는 역할?*/
+        .support_list li{float: left; width: 25%; position: relative;}
+        .support_list li::before{
+            content: ''; width: 1px; height: 100%; background-color: #000; position: absolute; top: 0; left: 0;
+        }
+        .support_list li:first-child::before{width: 0;}
+        .support_list li:hover a{text-decoration: none;}
+        .support_list li:hover dt{text-decoration: underline;}
+        /*--------------------------*/
+        .support_list li a{
+            display: block; position: relative; width: 100%; padding: 135px 10px 0;
+        }
+        .support_list li a::before{
+            content: ''; position: absolute; left: 50%; top: 0; height: 100px;
+            transform: translateX(-50%);
+            background: url(../img/sprite.png)no-repeat; background-size: 474px 1500px;
+        }
+        .support_list li:nth-child(1) a::before{background-position: 0 -957px; width: 87px;}
+        .support_list li:nth-child(2) a::before{background-position: -92px -957px; width: 101px;}
+        .support_list li:nth-child(3) a::before{background-position: -198px -957px; width: 112px;}
+        .support_list li:nth-child(4) a::before{background-position: -316px -957px; width: 93px;}
+        /*--------------------------*/
+        .support_list dt{font-family: 'NanumSquare-B'; color: #00b843;margin-bottom: 10px;}
+        .support_list dd{font-size: 15px;color: #888; line-height: 1.6;}
+        .support_list dd > span{display: block; margin: 0;  word-break: keep-all;}
+        .support_list li:hover a{text-decoration: none}
+        .support_list li:hover dt{text-decoration: none;}
+        /*-------------------------*/
+        @media screen and (max-width:1440px){
+            .support_list dd > span{display: inline;}
+        }

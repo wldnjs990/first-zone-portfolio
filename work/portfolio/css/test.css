@@ -1,0 +1,52 @@
+/*--2페이지-------------------------------------*/
+.second_page{height: auto; overflow: hidden;}
+/*--content 공통-----------------------------------*/
+.p_text{position: absolute; top: 5%; left: 50%; transform: translateX(-50%); font-size: 50px; font-weight: bold;}
+.content_box.right{
+    text-align: right; padding-right: 10px; margin-left: 1%; transform: translateX(150px);
+    opacity: 0; transition: all 1s;
+}
+.content_box.left{
+    text-align: left; padding-left: 10px; margin-right: 1%; transform: translateX(-150px);
+    opacity: 0; transition: all 1s;
+}
+.content_box.right.animation,
+.content_box.left.animation{transform: translateX(0); opacity: 1;}
+.content_box{
+    width: 49%; height: 20%; display: flex; flex-direction: column; background: yellow;
+    border-radius: 10px;
+}
+.content_box > span{font-size: 30px; font-weight: bold; margin-bottom: 15px;}
+.content_content{display: flex; flex-direction: row;}
+.content_text{width: 70%;}
+.content_img{width: 30%;}
+.content_img .img_bg{width: 95%; height: 95%; background: black;}
+.content_img img{
+    width: 100%; height: 100%; display: block; margin: 0 auto; transform: scale(.8);
+    text-align: center; transition: all .5s;
+}
+.content_img:hover{cursor: pointer;}
+.content_img:hover img{transform: scale(1);}
+.content_text dl{display: flex; flex-flow: row wrap; flex-direction: row;}
+.content_text dl dt{width: 30%; padding: 10px 0; font-size: 18px; font-weight: bold;}
+.content_text dl dd{width: 70%; padding: 10px 0; font-size: 17px;}
+.link_list{display: flex; flex-direction: row; width: 80%; margin: 20px auto 5px;}
+.link_list li{
+    margin: 0 auto; padding: 5px 15px; background: black; border-radius: 50px; text-align: center;
+    transition: all 1s;
+}
+.link_list li a{
+    color: #fff; width: 100%; height: 100%; display: block; text-decoration: none;
+    line-height: 17px; font-size: 13px; font-weight: bold;
+}
+.link_list li:hover{background: #fff;}
+.link_list li:hover a{color: black;}
+/*--//content 공통---------------------------------*/
+/*--redesign----------------------------------*/
+.redesign{width: 80%; margin: 0 auto; padding-top: 130px; display: flex; flex-direction: row; position: relative;}
+/*--//redesign--------------------------------*/
+/*--clonecoding----------------------------------*/
+.clonecoding{width: 80%; margin: 0 auto; padding-top: 200px; display: flex; flex-direction: column; position: relative;}
+.clonecoding_container{width: 100%; height: 100%; display: flex; flex-direction: row; position: relative; margin-bottom: 100px;}
+/*--//clonecoding--------------------------------*/
+/*--//2페이지--------------------------------------*/

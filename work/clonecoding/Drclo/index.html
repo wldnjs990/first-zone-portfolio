@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video_tag</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/font.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,300;1,300&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<div id="wrap">
+    <style>
+    *{color: #fff;}
+    html::-webkit-scrollbar{width: 8px; background-color: #c2c2c2;}
+    html::-webkit-scrollbar-thumb{background: #919191; border-radius: 50px;}
+    html,body{overflow-x: hidden;}
+    .video_bg{position:absolute; top: 0; left:0; z-index: -1;
+        width: 100%; height: 100%; overflow: hidden;
+    }
+    .video_bg > video{width: 100%; height: 100%; object-fit: cover;}
+    /*--------------------------*/
+    .ulwrap{text-align: center; position: fixed; top: 0; left: 0; width: 100%; margin-top: calc(50vh - 515px/2); padding: 0 50px; z-index:99; font-family: 'Noto Sans KR', sans-serif;}/*margin-top:50%; transform: calc(50% - 50%/2);}*/
+    .ulwrap::after{content: ''; width: calc(100% - 100px); height: 1px; background:rgba(255,255,255,0.2);; display: block; position: absolute; top: 90px;}
+    .img_list{
+        top: 0; left: 0; text-align: center;
+        width: 100%; height: 100%;
+    }
+    .img_list li{
+        display: inline-block;
+        width: 350px;
+        height: 100%;
+        vertical-align: top;
+        color: #fff;
+        text-align: left;
+        padding: 40px 35px;
+        margin: 0 40px;
+        cursor: pointer;
+    }
+    .img_list li:nth-child(1):hover{background: blue; transition: all.5s;}
+    .img_list li:nth-child(2):hover{background: pink; transition: all.5s;}
+    .img_list li:nth-child(3):hover{background: orange; transition: all.5s;}
+    .img_list a{text-decoration: none;}
+    .img_list p{
+        font-size: 14px; font-weight: bold; padding-bottom: 30px; border-bottom: 2px solid #fff;
+        margin-bottom: 30px; position: relative;
+    }
+    .img_list span{font-size: 26px;
+        font-weight: 300;
+        margin-bottom: 15px;
+        line-height: 1.3em;}
+    .img_list .lightfont{font-weight: 300;}
+    .img_list .boldfont{font-weight: 600; display: block;}
+    .img_list .arrow::after{
+        content: '';width: 47px; height: 15px; background: url(img/ban_arrow.png)no-repeat 0 0;
+        background-size: 47px 15px; display: block;
+    }
+    /*----------------------------*/
+    .btn{margin-top: 20px;}
+    .btn a{display: inline-block; font-size: 16px; color: #fff; padding: 10px 40px; border:solid 1px #fff; border-radius:50px; text-decoration: none;}
+    /*----------------------------*/
+    .img_bg{
+        position: fixed; z-index: 2; left: 0; top: 0;
+        width: 100%; height: 100%; min-width: 100%; min-height: 100%;
+    }
+    .img_bg div{
+        width: 100%; height: 0; transition: opacity 1s; opacity: 0;
+        background-position: center; background-size: cover; font-size: 0;
+    }
+    .img_bg div.over{opacity: 1; height: 100%;}
+    .img_bg div:nth-child(1){background-image: url(img/main_over1.jpg);}
+    .img_bg div:nth-child(2){background-image: url(img/main_over2.jpg);}
+    .img_bg div:nth-child(3){background-image: url(img/main_over3.jpg);}
+
+    /**/
+
+    /*--header------------------------------*/
+    .header_wrap{position: fixed; width: 100%; z-index: 999;}
+    .logo{position: absolute; left: 50px; margin-top: 30px; z-index: 999;}
+    .logo a{display: block;}
+    .logo .logo_c{display: none;}
+    /**/
+    .menu_wrap{position: absolute; right: 70px; margin-top: 35px; display: flex; flex-flow: row;}
+    .language{
+        display:block; background: url(img/language_arrow.png)no-repeat right 10px; padding-right: 10px;
+        margin-right: 30px; cursor: pointer; z-index: 999;
+    }
+    .language .lan_list{margin-left: 10px; display: none;}
+    .language .lan_list a{
+        display: block; margin-bottom: 1px; font-size: 13px; color: #fff; text-align: center; 
+        font-family: 'Exo', 'Noto Sans KR'; text-transform: uppercase; padding-right: 10px; text-decoration: none;
+    }
+    .lan_img.b{display: none;}
+    .hide_btn{width: 30px; height: 30px; padding-top: 4px; cursor: pointer; position: relative; z-index: 999;}
+    .hide_btn span{border-radius: 2px; background: #fff; height: 2.5px; margin: 5px 0; display: block; transition: all 0.3s;}
+    .hide_btn span:nth-child(1){width: 30px;}
+    .hide_btn span:nth-child(2){width: 25px;}
+    .hide_btn span:nth-child(3){width: 20px;}
+    .hide_btn.active{padding-top: 8px;}
+    .hide_btn.active span{background: black;}
+    .hide_btn.active span:nth-child(1){width: 33px; transform: translateY(5px) rotate(45deg);}
+    .hide_btn.active span:nth-child(2){display: none;}
+    .hide_btn.active span:nth-child(3){width: 33px; transform: translateY(-3px) rotate(-45deg);}
+    /**/
+    .hide_menu{opacity: 0; width: 100vw; height: 0vh; position: fixed; background: url(img/full_bg.jpg) no-repeat; background-size: cover; top: 0; padding: 0 60px; transition: all .3s;}
+    .hide_menu.on{opacity: 1; height: 100vh; z-index: 998;}
+    .hide_menu.on .hide_gnb{display: block;}
+    .hide_menu.on .full_board{display: block;}
+    .header_wrap.on .logo_n{display: none;}
+    .header_wrap.on .logo_c{display: block;}
+    .header_wrap.on .language{background: url(img/language_arrow2.png)no-repeat right 10px;}
+    .header_wrap.on .lan_list a{color: #000;}
+    .header_wrap.on .lan_img.b{display: block;}
+    .header_wrap.on .lan_img.w{display: none;}
+    /**/
+    .hide_gnb{margin: 10vh auto 0; width: 600px; display: none;}
+    .hide_gnb > li{margin-bottom: 20px;} 
+    .hide_gnb li .mo_btn{display: none;}
+    .hide_gnb li p{font-size: 30px; color: #1b1b1b; font-weight: 900; letter-spacing: 0.05em; font-family: 'Exo';}
+    .hide_gnb li .inline{margin-top: 5px; }
+    .inline_menu{display: block;}
+    .inline_menu li{display: inline-block; vertical-align: top;}
+    .inline_menu li a{color: #545454; font-size: 16px; text-decoration: none; font-weight: 400; letter-spacing: -1; font-family: 'Exo';}
+    .inline_menu.kor li a{font-family: 'Noto Sans KR';}
+    .inline_menu li a::after{content: ''; width: 1px; height: 13px; background: rgba(0,0,0,0.2); margin:0 11px 0 15px; display: inline-block;}
+    .inline_menu li:last-child a::after{display: none;}
+    .inline_menu:last-child li img{vertical-align: middle; margin-left: 3px;}
+    /**/
+    .full_board{width: 600px; margin: 40px auto 0; padding-top: 30px; border-top: solid 1px #e2e2e2; display: none;}
+    .full_board h4{
+        color: #000; font-size: 16px; font-weight: 500; font-family: 'Exo'; color: #1b1b1b;
+        padding-bottom: 10px; overflow: hidden; text-transform: uppercase; width: 100%; position: relative;
+    }
+    .full_board a{text-decoration: none;}
+    .full_board h4 a{position: absolute; top: 6px; right: 0;}
+    .full_board p{
+        margin-top: 10px; font-size: 14px; margin-bottom: 3px; color: #1b1b1b; white-space: nowrap;
+        text-overflow: ellipsis; overflow: hidden; font-weight: 900; font-family: 'Noto Sans KR';
+    }
+    .full_board .thum{display: block; padding-top: 65%; background-size: cover; background-position: center;}
+    .full_board .date{font-size: 13px; opacity: .3; font-family: 'Exo'; color: #000;}
+    .full_board .detail{font-size: 10px; padding: 0 5px; background: #1b1b1b; color: #fff; font-family: 'Noto Sans KR'; text-transform: uppercase;}
+    .full_board .left_board{display: inline-block; width: 48.5%; margin-right: 2%;}
+    .full_board .right_board{display: inline-block; width: 48.5%;}
+    .full_board .left_board .thum{background-image: url(img/hide1.jpg);}
+    .full_board .right_board .thum{background-image: url(img/hide2.jpg);}
+    /**/
+    .full_bottom{padding:50px 0px; width: 100%; font-family: 'Noto Sans KR'; letter-spacing: -.3px;}
+    .full_bottom .left_video{font-size: 14px; color: #1b1b1b; float: left; width: auto; cursor: pointer; text-decoration: none;}
+    .full_bottom .left_video img{margin-top: 4px;}
+    .full_bottom p{font-size: 13px; color: #1b1b1b; float: right;}
+    .full_bottom p span{color: #000;}
+    /*--footer------------------*/
+    /*공통*/
+    .footer{
+        position: fixed; z-index: 99; overflow: hidden; color: #fff; padding: 0 50px;
+        height: 25px; font-size: 14px; font-weight: 400; width: 100%; bottom: 30px; left: 0;
+    }
+    .footer .links{width: calc(100% - 200px); float: left; display: flex; align-items: center;}
+    .footer .links li{display: inline-block; vertical-align: middle; font-size: 0; word-spacing: 0; position: relative; height: 25px;}
+    .footer .links li::after{content: ''; margin: 0 15px; width: 1px; height: 15px; display: inline-block; background: #fff; opacity: .5; vertical-align: middle;}
+    .footer .links li:last-child:after{display: none;}
+    .footer .links li h3{
+        display: inline-block; vertical-align: top; margin-top: 5px; line-height: 1em;
+        text-transform: uppercase; font-family: 'Exo', 'Noto Sans KR'; font-weight: 300;
+        font-size: 16px; font-weight: 300;
+    }
+    .footer .links li a{color: #fff; text-decoration: none;}
+    .footer .links li h3 p{font-size: 20px;}
+    .footer .links li .notice_list{
+        overflow: hidden; display: inline-block; vertical-align: middle; height: 100%;
+        margin-left: 30px; padding-top: 2px; width: calc(100% - 240px); padding-right: 10px;
+    }
+    .notice_list .slick-prev{position: absolute; top: 37%; font-size: 0; background: url(img/slide_btn_prev.png) no-repeat; width: 11px; height: 6px;}
+    .notice_list .slick-next{position: absolute; top: 37%; font-size: 0; background: url(img/slide_btn_next.png) no-repeat; width: 11px; height: 6px;}
+    .slick_slide{height: 25px; position: relative; width: 100%; z-index: 1; display: flex; flex-flow: column;}
+    .slick_slide b{overflow: hidden; text-overflow: ellipsis; width: calc(100% - 80px); white-space: nowrap; display: block; font-family: 'Noto Sans KR'; font-weight: bold;}
+    .slick_slide em{width: 80px; display: block; opacity: .5; font-family: 'Exo';}
+    .slick_slide a{font-size: 14px; display: flex; flex-direction: row;}
+    /*//공통*/
+    /*st, nd*/
+    .links li.st::after{margin-left: 70px;}
+    .links li.nd::after{margin-left: 110px;}
+    /*st*/
+    .links .st{width: calc(50% - 100px); max-width: 670px; align-items: center;}
+    .links .st > h3{width: 120px;}
+    .st .slick_slide em{margin-left: 20px;}
+    .st .notice_list .slick-prev{right: 42px;}
+    .st .notice_list .slick-next{right: 56px;}
+    /*nd*/
+    .links .nd{width:calc(50% - 100px); max-width: 600px; align-items: center;}
+    .links .nd > h3{width: 80px;}
+    .nd .notice_list .slick-prev{right: 45px;}
+    .nd .notice_list .slick-next{right: 59px;}
+    /*rd*/
+    .links li.rd::after{margin-top: 6px;}
+    /*--p-----------*/
+    .footer .copyright{
+        width: 200px; font-size: 13px; float: left; text-align: right;
+        text-transform: uppercase; padding-top: 3px;
+    }
+    /*media*/
+    @media screen and (max-width:1400px) {
+        .img_list li{width: 250px; margin: 0 10px; padding: 40px 10px;}
+        .img_list li span{font-size: 23px;}
+        .footer .links{display: none;}
+        .footer .copyright{text-align: center; float: unset; margin: 0 auto;}
+    }
+    @media screen and (max-width:960px){
+    .header_wrap{position: absolute; top: 0;}
+    .img_bg{
+        background: url(img/main_over3.jpg);
+        background-position:center; background-size: cover;
+    }
+    .video_bg,
+    .img_bg .over{display: none;}
+    .ulwrap{
+        position: relative; height: auto; min-height: 100vh; margin-top: 140px;
+        padding-bottom: 100px;
+    }
+    .ulwrap::after{display: none;}
+    .img_list li{position: relative; width: 100%; margin: 0 0 30px 0; padding: 0;}
+    .img_list li:nth-child(1):hover{background: none;}
+    .img_list li:nth-child(2):hover{background: none;}
+    .img_list li:nth-child(3):hover{background: none;}
+    .img_list li span{font-size: 26px; margin-bottom: 22px;}
+    .img_list .arrow::after{display: block; background-size: 30px;}
+    .img_list p{
+        font-size: 14px; font-weight: 400; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 10px; position: relative;
+    }
+    .img_list p::after{content: ''; width: 30px; height: 2px; background: #fff; position: absolute; bottom: -1px; left: 0;}
+    .img_list img{position: absolute; right: 0; top: 85px;}
+    /**/
+    .hide_menu{padding: 60px 3%;}
+    .hide_gnb{width: 100%; margin-top: 40px;}
+    .hide_gnb > li{position: relative;}
+    .hide_gnb li p{font-size: 26px;}
+    .inline_menu{display: none;}
+    .inline_menu li{display: block; margin-top: 10px;}
+    .hide_gnb li .mo_btn{
+        position: absolute; right: 0px; top: 0px; display: block;
+        width: 100%; height: 38px; background: url(img/mo_menu_btn.png) no-repeat right center;
+    }
+    .hide_gnb li.open .mo_btn{background: url(img/mo_menu_btn_click.png) no-repeat right center;}
+    .inline_menu li a::after{display: none;}
+    /**/
+    .footer{position: relative;}
+    }
+    @media screen and (max-width:600px){
+    .logo{left: 30px;}
+    .menu_wrap{right: 30px;}
+    .logo_n img{width: 100px;}
+    .logo_c img{width: 100px;}
+    .ulwrap{margin-top:100px; padding: 0 30px;}
+    .full_board{width: 100%;}
+    .full_board .left_board,
+    .full_board .right_board{width: 100%;}
+    .full_board .detail{display: none;}
+    .full_board a{width: 100%; display: block; position: relative; padding-left: 30px;}
+    .full_board .left_board a::before{
+        content: 'N'; width: 20px; height: 20px; color: #fff; background: #000;
+        text-align: center; font-weight: bold; font-size: 14px; border-radius: 50px;
+        display: block; position: absolute; top: 10px; left: 0;
+    }
+    .full_board .right_board a::before{
+        content: 'P'; width: 20px; height: 20px; color: #fff; background: #000;
+        text-align: center; font-weight: bold; font-size: 14px; border-radius: 50px;
+        display: block; position: absolute; top: 10px; left: 0;
+    }
+    .full_board p{display: inline-block; width: 80%;}
+    .full_board .date{float: right; margin-top: 12px;}
+    .full_board h4{display: none;}
+    .full_board .thum{display: none;}
+    .full_bottom{padding: 60px 5px 0;}
+    .full_bottom p span{display: none;}
+    }
+    @media screen and (max-width:450px){
+    .logo{left: 20px; margin-top: 15px;}
+    .logo_n img{width: 80px;}
+    .logo_c img{width: 80px;}
+    .ulwrap{padding: 0 20px;}
+    .menu_wrap{right: 10px;  margin-top: 15px;}
+    .language{margin-right: 10px;}
+    .img_list p{padding-bottom: 10px;}
+    .img_list li span{font-size: 22px;}
+    .btn{margin-top: 0px;}
+    .btn a{font-size: 13px;}
+    .btn img{margin-top: 2px; margin-left: 4px;}
+    .img_list img{top: 75px;}
+    .full_board p{width: 70%;}
+    }
+    </style>
+    <div class="header_wrap">
+        <div class="logo">
+            <a href="" class="logo_n"><span><img src="img/logo.png" alt=""></span></a>
+            <a href="" class="logo_c"><span><img src="img/logo-color.png" alt=""></span></a>
+        </div>
+        <div class="menu_wrap">
+            <div class="language">
+                <span class="lan_img w"><img src="img/language_icon.png" alt=""></span>
+                <span class="lan_img b"><img src="img/language_icon-black.png" alt=""></span>
+                <ul class="lan_list">
+                    <li><a href="">KOR</a></li>
+                    <li><a href="">ENG</a></li>
+                    <li><a href="">CHN</a></li>
+                </ul>
+            </div>
+            <div class="hide_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="hide_menu">
+            <ul class="hide_gnb">
+                <li>
+                    <p>Introduction</p>
+                    <p class="mo_btn"></p>
+                    <div class="inline">
+                        <ul class="inline_menu kor">
+                            <li><a href="">생활바이오에 대하여</a></li>
+                            <li><a href="">엔오엔 쓰임을 연구하다</a></li>
+                            <li><a href="">닥터클로, 완전한 쓰임이 되다</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p>Product</p>
+                    <p class="mo_btn"></p>
+                    <div class="inline">
+                        <ul class="inline_menu">
+                            <li><a href="">All</a></li>
+                            <li><a href="">Dr.Clo</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p>Certificates</p>
+                    <p class="mo_btn"></p>
+                    <div class="inline">
+                        <ul class="inline_menu kor">
+                            <li><a href="">특허</a></li>
+                            <li><a href="">인증서</a></li>
+                            <li><a href="">시험성적서</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p>Community</p>
+                    <p class="mo_btn"></p>
+                    <div class="inline">
+                        <ul class="inline_menu">
+                            <li><a href="">News & Notice</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Contact us</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p>Online Shop</p>
+                    <p class="mo_btn"></p>
+                    <div class="inline">
+                        <ul class="inline_menu">
+                            <li><a href="">Naver Smart Store<img src="img/link_icon.png" alt=""></li>
+                            <li><a href="">Dr.Clo Shop<img src="img/link_icon.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="full_board">
+                <div class="left_board">
+                    <h4>news & notice<a href=""><img src="img/full_more_btn.png" alt=""></a></h4>
+                    <a href="">
+                        <span class="thum"></span>
+                        <p>엔오엔, 창립 10주년 기념 생활바이오 브랜드 ‘닥터클로’ 현대홈쇼핑 런칭</p>
+                        <span class="date">2021.09.01</span>
+                    </a>
+                </div>
+                <div class="right_board">
+                    <h4>product<a href=""><img src="img/full_more_btn.png" alt=""></a></h4>
+                    <a href="">
+                        <span class="thum"></span>
+                        <p>닥터클로 살균탈취 스틱 Every In(수납공간용)</p>
+                        <span class="detail">DETAIL</span>
+                    </a>
+                </div>
+            </div>
+            <div class="full_bottom">
+                <a class="left_video play_btn">첫번째. 생활바이오편 전체 영상 <img src="img/play_in_btn2.png"></a>
+                <p>(C) N.O.N <span>All rights reserved.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ulwrap">
+        <ul class="img_list">
+            <li apple="bg1">
+                <a href="#">
+                    <p>Life & Bio, NON</p>
+                    <span class="lightfont">엔오엔,</span>
+                    <span class="boldfont">생활바이오를 말하다</span>
+                    <img src="img/ban_logo1.png" alt="">
+                    <i class="arrow"><em class="blind">a</em></i>
+                </a>
+            </li><!--title = li에 이름 붙이는거-->
+            <li apple="bg2">
+                <a href="#">
+                    <p>Trust & Safety</p>
+                    <span class="lightfont">엔오엔,</span><br>
+                    <span class="boldfont">안전한 쓰임을 연구하다</span>
+                    <img src="img/ban_logo2.png" alt="">
+                    <i class="arrow"><em class="blind">a</em></i>
+                </a>
+            </li>
+            <li apple="bg3">
+            <a href="#">
+                <p>Best Opinion, DrClo.</p>
+                <span class="lightfont">닥터클로,</span><br>
+                <span class="boldfont">완전한 쓰임이 되다</span>
+                <img src="img/ban_logo3.png" alt="">
+                <i class="arrow"><em class="blind">a</em></i>
+            </a>
+            </li>
+        </ul>
+        <div class="btn">
+            <a href="#">
+                첫번째. 생활바이오편 전체 영상
+                <img src="https://www.drclo.com/ko/setting/image/index/play_in_btn.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <ul class="links">
+            <li class="st">
+                <h3>
+                    <a>news & notice</a>
+                </h3>
+                <div class="notice_list">
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>엔오엔, 창립 10주년 기념 생활바이오 브랜드 ‘닥터클로’ 현대홈쇼핑 런칭</b>
+                            <em>2021.09.01</em>
+                        </a>
+                    </div>
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>살균탈취스틱 '닥터클로' 광고계 블루칩 임영웅 모델로 선정</b>
+                            <em>2021.04.19</em>
+                        </a>
+                    </div>
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>임영웅 100m 전광판·전국 극장·제주공항 광고..'닥터클로' 오늘(19일)부터 TV광고 '두둥'</b>
+                            <em>2021.04.19</em>
+                        </a>
+                    </div>
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>'대세 스타' 임영웅, 제주공항까지 접수..'닥터클로', 스케일 다른 공격적 마케팅 "대박!"</b>
+                            <em>2021.04.19</em>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="nd">
+                <h3>
+                    <a>product</a>
+                </h3>
+                <div class="notice_list">
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>뿌리까지 완벽하게 곰팡 더블킬!</b>
+                            <em>2022.04.12</em>
+                        </a>
+                    </div>
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>퍼스트터치(신선한 살균제)</b>
+                            <em>2021.11.02</em>
+                        </a>
+                    </div>
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>닥터클로 살균탈취 스틱 Every In(수납공간용)</b>
+                            <em>2021.05.27</em>
+                        </a>
+                    </div>
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>닥터클로 살균탈취 스틱 Every(옷장, 쇼파, 침대용)</b>
+                            <em>2021.03.31</em>
+                        </a>
+                    </div>
+                    <div class="slick_slide">
+                        <a href="">
+                            <b>닥터클로 살균탈취 스틱 Fresh(냉장고용)</b>
+                            <em>2021.03.31</em>
+                        </a>
+                    </div>
+                </div>
+                <li class="rd">
+                    <h3>
+                        <a href="#">FAQ</a>
+                    </h3>
+                </li>
+                <li class="th">
+                    <h3>
+                        <a href="#">CONTACT US</a>
+                    </h3>
+                </li>
+            </li>
+        </ul>
+        <p class="copyright">(C) N.O.N ALL RIGHTS RESERVED.</p>
+    </div>
+</div>
+
+
+<div class="video_bg">
+    <video autoplay muted loop>
+        <source src="https://www.drclo.com//ko/setting/video/main_bg_v2.mp4" type="video/mp4"></source>
+    </video>
+</div>
+
+<div class="img_bg">
+    <div id="bg1">01</div>
+    <div id="bg2">02</div>
+    <div id="bg3">03</div>
+</div>
+
+    <script>
+        $('.img_list li').mouseenter(function(){
+            var list_id = $(this).attr('apple');
+            $('.img_bg div').removeClass('over');
+            $('#' + list_id).addClass('over');
+        });
+        $('.img_list').mouseleave(function(){
+            $('.img_bg div').removeClass('over');
+        });
+        $('.lan_img img').click(function(){
+            $('.lan_list').slideToggle()
+        });
+        $('.hide_btn').click(function(){
+            $('.hide_btn').toggleClass('active')
+            $('.hide_menu').toggleClass('on')
+            $('.header_wrap').toggleClass('on')
+        });
+        /*--slick--------------*/
+        $(".notice_list").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            //-----------
+            vertical: true,    
+            verticalSwiping: true
+        });
+        /*--//slick------------*/
+        
+        /*--hide_gnb 스크립트--*/
+        $('.hide_gnb > li').click(function(){
+            if($(this).find('.inline_menu').css("display") == "none"){
+                $('.inline_menu').slideUp().removeClass('on');
+                $(this).find('.inline_menu').slideDown().addClass('on');
+            } else if($(this).find('.inline_menu').hasClass('on')){
+                $('.inline_menu').slideUp().removeClass('on');
+            }
+        })
+    </script>
+<!----------
+동영상태그 <video> 요소 및 속성
+controls    : 영상의 컨트롤패널 출력 
+muted       : 영상 강제 음소거
+loop        : 영상 끝난 뒤 이어서 반복 재생
+poster      : 영상 재생되기전 미리보기 이미지( muted 속성 지정 되어야 함 )
+autoplay    : 영상의 자동 재생 기능 ( muted 속성 지정 되어야 함 )
+------------>
+</body>
+</html>

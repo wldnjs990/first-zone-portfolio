@@ -1,0 +1,57 @@
+@charset "utf-8";
+@font-face{
+	font-family:'Noto Sans KR';font-style:normal;font-weight:100;
+	src:url(../font/NotoSans/NotoSansKR-Thin.woff2) format('woff2'),
+	url(../font/NotoSans/NotoSansKR-Thin.woff) format('woff'),
+	url(../font/NotoSans/NotoSansKR-Thin.otf) format('opentype')
+}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;
+	src:url(../font/NotoSans/NotoSansKR-Light.woff2) format('woff2'),
+	url(../font/NotoSans/NotoSansKR-Light.woff) format('woff'),
+	url(../font/NotoSans/NotoSansKR-Light.otf) format('opentype')
+}
+@font-face{
+	font-family:'Noto Sans KR';font-style:normal;font-weight:400;
+	src:url(../font/NotoSans/NotoSansKR-Regular.woff2) format('woff2'),
+	url(../font/NotoSans/NotoSansKR-Regular.woff) format('woff'),
+	url(../font/NotoSans/NotoSansKR-Regular.otf) format('opentype')
+}
+@font-face{
+	font-family:'Noto Sans KR';font-style:normal;font-weight:500;
+	src:url(../font/NotoSans/NotoSansKR-Medium.woff2) format('woff2'),
+	url(../font/NotoSans/NotoSansKR-Medium.woff) format('woff'),
+	url(../font/NotoSans/NotoSansKR-Medium.otf) format('opentype')
+}
+@font-face{
+	font-family:'Noto Sans KR';font-style:normal;font-weight:700;
+	src:url(../font/NotoSans/NotoSansKR-Bold.woff2) format('woff2'),
+	url(../font/NotoSans/NotoSansKR-Bold.woff) format('woff'),
+	url(../font/NotoSans/NotoSansKR-Bold.otf) format('opentype')
+}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:900;
+	src:url(../font/NotoSans/NotoSansKR-Black.woff2) format('woff2'),
+	url(../font/NotoSans/NotoSansKR-Black.woff) format('woff'),
+	url(../font/NotoSans/NotoSansKR-Black.otf) format('opentype')
+}
+@font-face{font-family:Roboto;font-style:normal;font-weight:300;
+	src:local('Roboto Light'),
+	local('Roboto-Light'),
+	url(../font/Roboto/Roboto-Light.ttf) format('truetype')
+}
+@font-face{font-family:Roboto;font-style:normal;font-weight:400;
+	src:local('Roboto'),
+	local('Roboto-Regular'),
+	url(../font/Roboto/Roboto-Regular.ttf) format('truetype')
+}
+@font-face{
+	font-family:Roboto;font-style:normal;font-weight:500;
+	src:local('Roboto Medium'),
+	local('Roboto-Medium'),
+	url(../font/Roboto/Roboto-Medium.ttf) format('truetype')
+}
+@font-face{
+	font-family:Roboto;font-style:normal;font-weight:700;
+	src:local('Roboto Bold'),
+	local('Roboto-Bold'),
+	url(../font/Roboto/Roboto-Bold.ttf) format('truetype')
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isotope</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        @charset "utf-8";
+        .container{
+            width: 90%;
+            margin: 10px auto;
+        }
+        .container .menu{
+            text-align: center;
+        }
+        .container .menu ul li{
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid #ff6161;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .container .menu ul li:hover,
+        .container .menu ul li.active{
+            background-color: #ffb7b7;
+            color: #fff;
+        }
+        .container .item-wrap{
+            text-align: center;
+            margin-top: 50px;
+            overflow: hidden;
+        }
+        .container .item-wrap .item{
+            float: left;
+            width: 30%;
+            margin: 5px;
+            padding: 2px;
+        }
+        .container .item-wrap .item img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/79_20191204-isotope.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li data-filter="*" class="active">All</li>
+                <li data-filter=".web">웹디자인</li>
+                <li data-filter=".img">편집디자인</li>
+                <li data-filter=".graphic">시각디자인</li>
+            </ul>
+        </div>
+        <div class="item-wrap">
+            <div class="item web graphic img">
+                <img src="http://placehold.it/500" alt="500x500">
+            </div>
+            <div class="item web">
+                <img src="http://placehold.it/500/cfe" alt="500x500">
+            </div>
+            <div class="item web img">
+                <img src="http://placehold.it/500/c00" alt="500x500">
+            </div>
+            <div class="item web grapic">
+                <img src="http://placehold.it/500/cer" alt="500x500">
+            </div>
+            <div class="item graphic">
+                <img src="http://placehold.it/500/456" alt="500x500">
+            </div>
+            <div class="item graphic img">
+                <img src="http://placehold.it/500/0aa" alt="500x500">
+            </div>
+            <div class="item img">
+                <img src="http://placehold.it/500/cas" alt="500x500">
+            </div>
+            <div class="item img web">
+                <img src="http://placehold.it/500/r89" alt="500x500">
+            </div>
+            <div class="item  web graphic">
+                <img src="http://placehold.it/500/cre" alt="500x500">
+            </div>
+            <div class="item img web">
+                <img src="http://placehold.it/500/698" alt="500x500">
+            </div>
+            <div class="item img web">
+                <img src="http://placehold.it/500/abc" alt="500x500">
+            </div>
+            <div class="item img web">
+                <img src="http://placehold.it/500/bac" alt="500x500">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video_set</title>
+
+
+</head>
+<body>
+
+
+<style>
+body{margin: 0;}
+ul{width: 100vw; height: 100vh; margin: 0; padding: 0;}
+ul li{float: left; width: 50%; height: 50%; overflow: hidden;}
+ul li:nth-child(2){height: 100vh; float: right;}
+/**/
+ul li video{width: 101%;height: 100%; object-fit: cover; opacity: 0.5;}
+
+</style>
+
+<ul>
+    <li>
+        <video autoplay muted loop>
+            <source src="https://tantanmyun.co.kr/video/mv1_video1.mp4" type="video/mp4"></source>
+        </video>
+    </li>
+    <li>
+        <video autoplay muted loop>
+            <source src="https://tantanmyun.co.kr/video/mv1_video3.mp4" type="video/mp4"></source>
+        </video>
+    </li>
+    <li>
+        <video autoplay muted loop>
+            <source src="https://tantanmyun.co.kr/video/mv1_video2.mp4" type="video/mp4"></source>
+        </video>
+    </li>
+</ul>
+<!----------
+동영상태그 <video> 요소 및 속성
+controls    : 영상의 컨트롤패널 출력 
+muted       : 영상 강제 음소거
+loop        : 영상 끝난 뒤 이어서 반복 재생
+poster      : 영상 재생되기전 미리보기 이미지( muted 속성 지정 되어야 함 )
+autoplay    : 영상의 자동 재생 기능 ( muted 속성 지정 되어야 함 )
+------------>
+</body>
+</html>

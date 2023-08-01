@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수업-카카오 프라이버시 정책</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mouse_wheel.js"></script>
+<style>
+html{scroll-behavior: smooth;}
+html{overflow: auto;}
+/*html::-webkit-scrollbar{display: none;}스크롤바에 width, display 등 설정 가능*/
+html::-webkit-scrollbar-thumb{background: #555; border-radius: 10px;}/*thumb = 스크롤바*/
+html::-webkit-scrollbar-track{background: #999;}
+body{margin: 0; padding: 0;}
+</style>
+</head>
+<body>
+<!---------------------------------------------------------->
+<style>
+/*--상단--------------------------------------------------*/
+#head{height: 100vh;}
+
+/*--up----------------------------------------------------*/
+#up{height: 128px;}
+#up .logo{
+    display: block; width: 168px; height: 40px; background: url(img/icon.png) 0 0 no-repeat;
+    position: absolute; left: 16.4%; top: 2.5%;
+}
+#up .menu{
+    font-size: 18px; font-weight: 400; width: 600px;
+    position: absolute; top: 3.4%; left: 31.4%;
+}
+.menu a{margin-right: 55px;  text-decoration: none;}
+.hidden li{display: inline-block; font-size: 13px; margin-right: 25px;}
+.hidden.sec1{text-align: left; width: 500px; position: absolute; left: 34.4%; top: 4.8%; display: none; padding-top: 20px;}
+.hidden.sec2{text-align: left; width: 400px; position: absolute; left: 39%; top: 4.8%; display: none; padding-top: 20px;}
+.hidden.sec3{text-align: left; width: 250px; position: absolute; left: 47.6%; top: 4.8%; display: none; padding-top: 20px;}
+.hidden.sec1.vision{display: block;}
+.hidden.sec2.vision{display: block;}
+.hidden.sec3.vision{display: block;}
+.hidden.sec1:hover{display: block;}
+.hidden.sec2:hover{display: block;}
+.hidden.sec3:hover{display: block;}
+.hide a:hover{text-decoration: none; font-weight: bold;}
+/*---------------------------------*/
+.right{width: 8%; text-align: left; position: absolute; top: 3.4%; left: 78.1%;}
+.right .login{font-size: 12px; font-weight: 400; margin-right: 45px;}
+.right .language{font-size: 14px; text-decoration: none;}
+/*---------------------------------*/
+/*--up----------------------------------------------------*/
+
+/*--middle--------------------------------*/
+#middle{width: 1000px; height: 180px; margin: 113.5px auto 0; position: relative;}
+#middle .ryan{
+    background: url(img/img_character.png); width: 173px; height: 208px;
+    background-position: 0 0;  position: absolute; top: -13px; left: 91px; 
+}
+#middle .text{
+    position: relative; width: 589.9px; height: 144px; text-align: left; bottom: 19px; left: 320px;
+    font-size:46px; line-height:60px; font-weight:400; 
+}
+#middle .first{font-size: 24px;}
+#middle .first::after{
+    content: ''; display: block; background: url(img/icon.png)-210px -80px no-repeat;;
+    position: absolute; top: -11px; left: 272px; width: 100px; height: 40px;
+}
+#middle .second{font-size: 60px;}
+#middle .beta{position: relative; top: 4px;}
+/*--//middle------------------------------*/
+
+/*--under---------------------------------*/
+#under{
+    width: 1000px; height: 90px; background: #525358; border-radius: 35px; margin: 139px auto 0;
+    color: #fff;
+}
+#under .kaka p{font-size: 22px; padding-top: 14px;}
+#under a{
+    font-size: 14px; font-weight: 400; color: #fff; position:relative; bottom: 22px; text-decoration: underline;
+}
+#under .scrollicon{
+    display: block; width: 22px; height: 80px; margin: 114px auto 0;
+    background: url(img/icon.png) 0 -50px no-repeat;
+}
+/*--//under-------------------------------*/
+/*--//상단------------------------------------------------*/
+
+/*--컨텐츠-----------------------------------------------*/
+.section{ height:100vh; position:relative; overflow:hidden; text-align:center;}
+/*.section.sec1{background-color:yellow;}
+.section.sec2{background-color:skyblue;}
+.section.sec3{background-color:yellowgreen;}
+.section.sec4{background-color:pink;}
+.section.sec5{background-color:salmon;}
+.section.sec6{background-color:rosybrown;}
+.section.sec7{background-color:white;}*/
+/*--------------------*/
+.extra .img{ 
+    margin: 97px auto 0; overflow:hidden; font-size:0; line-height:0;
+    background: url(img/img_character.png) no-repeat;
+}
+.section.sec1 .img{width:280px; height:316px; background-position:-200px 0;}
+.section.sec2 .img{width:291px; height:284px; background-position:-500px 0;}
+.section.sec3 .img{width:259px; height:287px; background-position:-820px 0;}
+.section.sec4 .img{width:280px; height:285px; background-position:0 -360px;}
+.section.sec5 .img{width:292px; height:259px; background-position:-340px -360px;}
+.section.sec6 .img{width:314px; height:289px; background-position:-660px -360px;}
+.section.sec7 .img{width:254px; height:273px; background-position:-1000px -360px;}
+/*--------------------*/
+.extra strong { padding-top:184px; display:block; font-size:46px; line-height:62px; font-weight:400; }
+.extra p{ padding-top:38px; font-size:20px; line-height:34px; }
+.extra p > br:last-child{display:none;}
+/*--------------------*/
+.extra strong,
+.extra p,
+.extra .img{ opacity:0; transform:translate(0,100px); vertical-align:top; transition:all .4s;}
+.extra.motion strong,
+.extra.motion p,
+.extra.motion .img{ opacity:1; transform: translate(0,0);}
+.extra.motion strong{transition-delay:0s;}
+.extra.motion p{transition-delay:.2s;}
+.extra.motion .img{transition-delay:.4s;}
+/*--------------------*/
+.sec_nav{top:50%; right:200px; z-index:999; display: none;}
+.sec_nav li{
+    width:20px; height:20px; font-size:0; line-height:0; overflow:hidden;
+    display:flex; justify-content:center; align-items:center;
+}
+.sec_nav a{ 
+    width:4px; height:4px; background:#000; border-radius:50%;
+    pointer-events:none;/*링크비활성*/
+}
+.sec_nav a:hover, 
+.sec_nav .on{ width:12px; height:12px; background-color:#FFD602;}
+/*--------------------*/
+.show{display: block; position: fixed;}
+/*
+#flexbox 활용
+수평정렬 : display:flex; justify-content:center; (중앙정렬)
+수직정렬 : display:flex; flex-direction:column; justify-content:center;(위에서 아래로 수직 배치, 중앙정렬)
+수평&수직정렬 : display:flex; justify-content:center; align-items:center;
+---------------
+align-items:center;   (수직 중심 기준 : 한줄정렬)
+align-content:center; (수직 위 기준 : 두줄이상 정렬)
+*/
+/*--//컨텐츠---------------------------------------------*/
+
+/*--하단-----------------------------------------------*/
+#foot{height: 100vh;}
+.info{font-size: 50px; padding: 104px 0 65px;}
+.strongb{line-height: 80px;}
+.ftlist{padding-top: 71px;}
+.ftlist li{display: inline-block; padding-left: 101px;}
+.ftlist li:first-child{padding: 0;}
+.ftlist li strong{font-size: 18px; font-weight: 400; line-height: 15px;}
+.ftlist li span{
+    width: 24px; height: 24px; display: inline-block;
+    background: url(img/icon.png)-120px -50px no-repeat;
+    font-size: 0; position: relative; bottom: 8px; margin-left: 11px;
+}
+.ftlist li p{font-size: 14px; line-height: 22px;}
+
+/*--//하단---------------------------------------------*/
+/*--media-------------------------------*/
+@media screen and (max-width:1168px){
+    .extra strong,
+    .extra p,
+    .extra .img{opacity:1; transform: none;}
+    .extra strong{font-size: 22px; line-height: 32px;}
+    .extra p{font-size: 13px; padding-top: 0px; line-height: 23px;}
+    .extra p > br:last-child{display: block;}
+    .extra .img{background: url(img/img_character-\(small\)-real.png); margin-top: 30px;}
+    .section.sec1 .img{width: 127px; height: 137px; background-position: -480px -180px;}
+    .section.sec2 .img{width: 127px; height: 137px; background-position: -480px -180px;}
+    .section.sec3 .img{width: 127px; height: 137px; background-position: -480px -180px;}
+    .section.sec4 .img{width: 127px; height: 137px; background-position: -480px -180px;}
+    .section.sec5 .img{width: 127px; height: 137px; background-position: -480px -180px;}
+    .section.sec6 .img{width: 127px; height: 137px; background-position: -480px -180px;}
+    .section.sec7 .img{width: 127px; height: 137px; background-position: -480px -180px;}
+    .section{height: 500px;}
+    .sec_nav{display: none;}
+}
+/*--//media-----------------------------*/
+</style>
+
+
+
+
+<!--상단-------------------------------------------->
+    <div id="head" class="section">
+        <div id="up">
+            <a href="#" class="logo"><span class="blind">kakao프라이버시정책</span></a>
+            <div class="menu">
+                <a href="#" class="protect">보호</a>
+                <a href="#" class="center">프라이버시센터</a>
+                <a href="#" class="opacity">투명성</a>
+                <a href="#">소식과 정보</a>
+            </div>
+            <div class="hide">
+            <ul class="hidden sec1">             
+                <li><a href="#">프라이버시 철학</a></li>
+                <li><a href="#">프라이버시 보호 노력</a></li>
+                <li><a href="#">프라이버시정책자문위원회</a></li>
+                <li><a href="#">정보보호 인증</a></li>
+            </ul>
+            <ul class="hidden sec2"> 
+                <li><a href="#">프라이버시센터</a></li>
+                <li><a href="#">개인정보 처리절차 안내</a></li>
+                <li><a href="#">프라이버시 보호 가이드</a></li>
+            </ul>
+            <ul class="hidden sec3">             
+                <li><a href="#">투명성보고서란?</a></li>
+                <li><a href="#">투명성보고서(통계)</a></li>
+            </ul>
+            </div>
+            <div class="right">
+                <a href="#" class="login">로그인</a>
+                <a href="#" class="language">ENG</a>
+            </div>
+        </div>
+        <div id="middle">
+            <div class="ryan"><span class="blind">a</span></div>
+            <div class="text">
+                <span class="first">카카오는 새로운 연결을 통해</span>
+                <br>
+                <span class="second">더 편리하고 즐거운 세상을</span>
+                <br>
+                <span class="second beta">꿈꿉니다.</span>
+            </div>
+        </div>
+        <div id="under">
+            <div class="kaka">
+                <p>내 카카오 계정을 직접 관리하세요</p>
+                <br>
+                <a href="#">카카오 계정 로그인</a>
+            </div>
+            <div class="scrollicon"><span class="blind">a</span></div>
+        </div>
+    </div>
+<!--상단-------------------------------------------->
+
+<!--컨텐츠------------------------------------------>
+        <div id="section01" class="section sec1 extra">
+            <strong>음악이 필요할 때, 날씨가 궁금할 때<br>헤이 카카오!</strong>
+            <p>
+                상쾌한 아침, 목소리를 알아듣는 AI가<br>
+                내 취향에 맞는 음악을 들려주며, <br>오늘의 날씨를 알려줍니다.
+            </p>
+            <div class="img"></div>
+        </div>
+        <div id="section02" class="section sec2 extra">
+            <strong>추천 알고리즘을 이용한<br>맞춤형 뉴스</strong>
+            <p>
+                답답하고 지루한 지하철 출근길,<br>
+                추천 알고리즘은 내 관심사와 선호도에 따른 <br>맞춤형 뉴스를 보여줍니다.                    
+            </p>
+            <div class="img"></div>
+        </div>
+        <div id="section03" class="section sec3 extra">
+            <strong>영알못이어도 괜찮아<br>정교한 번역</strong>
+            <p>
+                낯설기만 한 외국어<br>
+                다양한 번역 사례와 언어 데이터가 <br>더욱 정교한 번역을 도와줍니다.
+            </p>
+            <div class="img"></div>
+        </div>
+        <div id="section04" class="section sec4 extra">
+            <strong>모바일로<br>빠르고 간편한 결제</strong>
+            <p>
+                음식은 맛있게, 정산은 카카오톡에서 한 번에!<br>
+                모바일의 안전한 결제를 위해서도 <br>데이터가 일하고 있습니다.
+            </p>
+            <div class="img"></div>
+        </div>
+        <div id="section05" class="section sec5 extra">
+            <strong>데이터 분석으로<br>편리한 쇼핑</strong>
+            <p>
+                깜빡했던 친구의 생일,<br>
+                내 친구의 선물을 알아서 추천해 주는 것도 <br>데이터 기술입니다.                    
+            </p>
+            <div class="img"></div>
+        </div>
+        <div id="section06" class="section sec6 extra">
+            <strong>내가 있는 곳이 길이다<br>최적의 길 찾기</strong>
+            <p>
+                막히는 퇴근길에 최적의 경로를 찾을 수 있는 것은<br>
+                먼저 그 길을 지나간 <br>수많은 운행 데이터 덕분입니다.                    
+            </p>
+            <div class="img"></div>
+        </div>
+        <div id="section07" class="section sec7 extra">
+            <strong>맞춤형 제안으로<br>인기작 추천</strong>
+            <p>
+                여유로운 저녁시간, 뭔가 보고 싶지만 고르기 귀찮을 때<br>
+                맞춤형 제안으로 <br>내 취향에 딱 맞는 추천작을 볼 수 있습니다.                    
+            </p>
+            <div class="img"></div>
+        </div>
+<!--//컨텐츠---------------------------------------->
+
+<!--하단-------------------------------------------->
+<div id="foot" class="section">
+    <div class="info">
+        <strong>
+            카카오는 데이터의 연결과 보호의 균형을 위해
+        </strong>
+        <br>
+        <strong class="strongb">
+            언제나 최선을 다 하겠습니다.
+        </strong>
+    </div>
+    <div class="ftlist">
+        <ul>
+            <li>
+                <a href="#">
+                    <strong>프라이버시 철학<span>a</span></strong>
+                    <p>카카오의 프라이버시 철학을<br>소개합니다.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <strong>개인정보 처리절차<span>a</span></strong>
+                    <p>정보가 수집, 이용, 제공, 파기되는<br>모든과정을 알려드립니다.</p>
+                </a>
+            </li><li>
+                <a href="#">
+                    <strong>투명성보고서<span>a</span></strong>
+                    <p>카카오의 투명성보고서를<br>공개합니다.</p>
+                </a>
+            </li><li>
+                <a href="#">
+                    <strong>프라이버시 소식<span>a</span></strong>
+                    <p>프라이버시 보호 관련<br>다양한 소식을 전합니다.</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <a href="#"><span>top</span></a>
+    </div>
+    <div>
+        <div>
+            <p>Copyright</p>
+            <a href="#">Kakao Corp.</a>
+            <p>All rights reserved.</p>
+        </div>
+        <div>
+            <a href="#">고객센터 문의하기</a>
+            <a href="#">관련사이트</a>
+        </div>
+    </div>
+</div>
+<!--//하단------------------------------------------>
+<!-- sec_nav --------------------->
+<ul class="sec_nav">
+    <li class="sec1"><a href="#section01" class="on">01</a></li>
+    <li class="sec2"><a href="#section02">02</a></li>
+    <li class="sec3"><a href="#section03">03</a></li>
+    <li class="sec4"><a href="#section04">04</a></li>
+    <li class="sec5"><a href="#section05">05</a></li>
+    <li class="sec6"><a href="#section06">06</a></li>
+    <li class="sec7"><a href="#section07">07</a></li>
+</ul>
+<!--//sec_nav--------------------->
+
+
+
+
+<script>
+/*--컨텐츠-----------------------------------------*/
+/*-- motion -------------------------------------*/
+$(document).ready(function(){    
+    const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2,
+    }
+    const observer = new IntersectionObserver(entry =>{
+        entry.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('motion'); 
+      } else {
+        entry.target.classList.remove('motion');        
+      }
+    });
+  }, options);
+  
+  const boxList = document.querySelectorAll('.section');
+  boxList.forEach(el => observer.observe(el));
+});
+/*-- //motion -----------------------------------*/
+
+/*-- 스크롤 -----------------------------------*/
+
+/*$(window).scroll(function(){
+    var apple = $(document).scrollTop();
+    var pineapple = $('#head').height();
+    var banana = $('#foot').scrollTop();
+    if(apple >= pineapple){
+        $('.sec_nav').addClass('show');
+    } else {$('.sec_nav').removeClass('show');}
+    
+});
+*/
+$(document).scroll(function(){
+    var apple = $(document).scrollTop();
+    var banana = $('#head').height();
+    var pineapple = $('#head').height();
+    if( apple <= banana + 5900 && apple >= pineapple){
+        $('.sec_nav').addClass('show');
+    } else {
+        $('.sec_nav').removeClass('show');
+    }
+});
+/*
+apple = document 높이(height) 좌표
+banana = motion 부분 높이길이(저는 motion 부분에 div요소로 묶었습니당(.wrap_slide))
+pineapple = header 부분 높이길이(저는 div 요소로 만들었습니당(#blank))
+
+현재 문서 높이 좌표(apple)가 header와 같거나 높아지거나,
+현재 문서 높이 좌표(apple)가 motion 부분 높이길이(banana) + 200px와 같거나 낮아진다면 .sec_nav 에 .show 클래스 명을 추가한다.
+그렇지 않다면 .show 클래스 명을 지운다.
+});*/
+
+/*-- //스크롤 -----------------------------------*/
+
+/*--sec_nav -------------------------------------*/
+/*highlightLink 함수가 실행되면 먼저 .sec_nav 모든 li에 .on 클래스 삭제
+  href에 해당하는 a태그을 찿아서 .on 클래스 추가*/
+$(window).on('scroll', function(){
+    var pos = $(window).scrollTop();
+    var pos2 = pos + 50;
+    var scrollBottom = pos + $(window).height();    
+    if (pos2 > $('#section01').offset().top) { highlightLink('section01');}
+    if (pos2 > $('#section02').offset().top) { highlightLink('section02');}
+    if (pos2 > $('#section03').offset().top) { highlightLink('section03');}
+    if (pos2 > $('#section04').offset().top) { highlightLink('section04');}
+    if (pos2 > $('#section05').offset().top) { highlightLink('section05');}
+    if (pos2 > $('#section06').offset().top) { highlightLink('section06');}
+    if (pos2 > $('#section07').offset().top) { highlightLink('section07');}
+});
+
+
+function highlightLink(anchor){
+  $('.sec_nav .on').removeClass('on');  
+  $(".sec_nav").find('[href="#' + anchor + '"]').addClass('on');
+};
+/*--//sec_nav -----------------------------------*/
+
+/*--//컨텐츠---------------------------------------*/
+
+
+/*--상단-----------------------------------*/
+
+$(document).ready(function(){
+        $('.protect').mouseenter(function(){
+            $('.hidden.sec1').addClass('vision')
+        })
+        $('.protect').mouseleave(function(){
+            $('.hidden.sec1').removeClass('vision')
+        })
+        $('.hidden sec1').mouseleave(function(){
+            $('.hidden.sec1').removeClass('vision')
+        })
+
+        $('.center').mouseenter(function(){
+            $('.hidden.sec2').addClass('vision')
+        })
+        $('.center').mouseleave(function(){
+            $('.hidden.sec2').removeClass('vision')
+        })
+        $('.hidden sec2').mouseleave(function(){
+            $('.hidden.sec2').removeClass('vision')
+        })
+
+        $('.opacity').mouseenter(function(){
+            $('.hidden.sec3').addClass('vision')
+        })
+        $('.opacity').mouseleave(function(){
+            $('.hidden.sec3').removeClass('vision')
+        })
+        $('.hidden sec3').mouseleave(function(){
+            $('.hidden.sec3').removeClass('vision')
+        })
+    });
+/*--//상단---------------------------------*/
+</script>
+
+<!--
+자주 사용하는 이벤트의 종류
+click        : 마우스버튼을 클릭하고 버튼에서 손가락을 떼면 발생한다.
+mouseover    : 마우스를 HTML요소 위에 올리면 발생한다.
+mouseout     : 마우스가 HTML요소 밖으로 벗어날 때 발생한다.
+mousedown    : 클릭을 하기 위해 마우스버튼을 누르고 아직 떼기 전인 그 순간, HTML요소를 드래그할 때 사용할 수 있다.
+mouseup      : 마우스버튼을 떼는 그 순간, 드래그한 HTML요소를 어딘가에 놓을 때 사용할 수 있다.
+mousemove    : 마우스가 움직일때마다 발생한다. 마우스커서의 현재 위치를 계속 기록하는 것에 사용할 수 있다.
+focus        : HTML요소에 포커스가 갔을때 발생한다.
+blur         : HTML요소가 포커스에서 벗어났을때 발생한다.
+keypress     : 키를 누르는 순간에 발생하고 키를 누르고 있는 동안 계속해서 발생한다.
+keydown      : 키를 누를 때 발생한다.
+keyup        : 키를 눌렀다가 떼는 순간에 발생한다.
+load         : 웹페이지에서 사용할 모든 파일의 다운로드가 완료되었을때 발생한다.
+resize       : 브라우저 창의 크기를 조절할때 발생한다.
+scroll       : 스크롤바를 드래그하거나 키보드(up, down)를 사용하거나 마우스 휠을 사용해서 웹페이지를 스크롤할 때 발생한다. 
+               페이지에 스크롤바가 없다면 이벤트는 발생하지 않다.
+unload       : 링크를 클릭해서 다른 페이지로 이동하거나 브라우저 탭을 닫을 때 혹은 브라우저 창을 닫을 때 이벤트가 발생한다.
+change       : 폼 필드의 상태가 변경되었을 때 발생한다. 라디오 버튼을 클릭하거나 셀렉트 박스에서 값을 선택하는 경우를 예로 들수 있다.
+-->
+
+</div>
+</body>
+</html>

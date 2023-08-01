@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 개발자 센터 - NAVER Developers - 수업</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!--jquery 사용하기 위한 명령어-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<body>
+<div id="wrap">
+<!--header----------------------------------------------------------------->
+<header>
+    <div class="header_wrap">
+        <h1>
+            <a href="https://www.naver.com/" class="naver"><span class="blind">naver</span></a>
+            <a href="http://zone.dothome.co.kr/clonecoding/developers/" class="developers"><span class="blind">developers</span></a>
+        </h1>
+        <nav>
+            <ul class="point">
+                <li><a href="https://developers.naver.com/products/intro/plan/plan.md">Products</a></li>
+                <li><a href="">Documents</a></li>
+                <li><a href="">Application</a></li>
+                <li><a href="">NAVER D2</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Forum</a></li>
+            </ul>
+        </nav>
+        <div class="header_right">
+            <ul>
+                <li class="API">
+                    <a href="">API 상태</a>
+                    <span class="tooltip">모든 API들이 정상 작동 중입니다. 자세한 상태를 보시려면 클릭하세요.</span>
+                </li>
+                <li class="search">
+                    <input type="search" name="keyword" placeholder="Search Here" maxlength="5">
+                    <button>
+                        <span class="blind">검색</span>
+                        <!--class="blind" : 글씨가 안보이게 만듬-->
+                    </button>
+                </li>
+                <li class="login"><a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fdevelopers.naver.com%2Fmain%2F">로그인</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header_m">
+        <h1>
+            <a href="https://www.naver.com/" class="naver"><span class="blind">naver</span></a>
+            <a href="http://zone.dothome.co.kr/clonecoding/developers/" class="developers"><span class="blind">developers</span></a>
+        </h1>
+        <button class="btn_open off"><span class="blind">전체메뉴</span></button>
+        <button class="btn_search"><span class="blind">검색</span></button>
+        <div class="search">
+            <input type="search" name="keyword" placeholder="Search Here" maxlength="5">
+        <div>
+    </div>
+</header>
+<!--//header--------------------------------------------------------------->
+<!--hide_menu---->
+<div class="hide_menu">
+    <div class="hide_back"></div>
+    <div class="hide_gnb">
+        <div class="gnb_head">
+            <button class="l"><i class="xi-angle-left"></i></button>
+            <span class="title"><span>Support</span></span>
+            <button class="r"><i class="xi-angle-right"></i></button>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrap">
+                <div class="gnb_menu">
+                    <ul class="list">
+                        <li>공지사항</li>
+                        <li>라이선스 준수</li>
+                    </ul>
+                </div>
+                <div class="gnb_menu">
+                    <ul class="list">
+                        <li>공지사항</li>
+                        <li>라이선스 준수</li>
+                    </ul>
+                </div>
+                <div class="gnb_menu">
+                    <ul class="list">
+                        <li>공지사항</li>
+                        <li>라이선스 준수</li>
+                    </ul>
+                </div>
+                <div class="gnb_menu">
+                    <ul class="list">
+                        <li>공지사항</li>
+                        <li>라이선스 준수</li>
+                    </ul>
+                </div>
+                <div class="gnb_menu">
+                    <ul class="list">
+                        <li>공지사항</li>
+                        <li>라이선스 준수</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//hide_menu-->
+<!--sub menu--------------------------------------------------------------->
+<div class="sub_menu">
+    <div class="depth">
+        <dl>
+            <dt><a href="#">API 이용 안내</a></dt>
+            <dd><a href="#">API 소개</a></dd>
+            <dd><a href="#">운영 정책</a></dd>
+            <dd><a href="#">API 소개</a></dd>
+            <dd><a href="#">API 소개</a></dd>
+            <dd><a href="#">API 소개</a></dd>
+            <dd><a href="#">API 소개</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">CLOVA</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">네이버 로그인</a></dt>
+            <dd><a href="#">네이버 로그인 API</a></dd>
+            <dd><a href="#">카페</a></dd>
+            <dd><a href="#">캘린더</a></dd>
+            <dd><a href="#">네이버페이 배송지 정보</a></dd>
+            <dd><a href="#">적용 가이드</a></dd>
+            <dd><a href="#">적용 사례</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">파파고</a></dt>
+            <dd><a href="#">Papago 번역</a></dd>
+            <dd><a href="#">언어 감지</a></dd>
+            <dd><a href="#">한글인명-로마자 변환 </a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">서비스 API</a></dt>
+            <dd><a href="#">데이터랩</a></dd>
+            <dd><a href="#">검색</a></dd>
+            <dd><a href="#">단축URL</a></dd>
+            <dd><a href="#">캡차</a></dd>
+            <dd><a href="#">네이버 공유하기</a></dd>
+            <dd><a href="#">모바일앱 연동</a></dd>
+            <dd><a href="#">네이버 오픈메인</a></dd>
+        </dl>
+    </div>
+    <div class="depth">
+        <dl>
+            <dt><a href="#">API 공통 가이드</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">CLOVA</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">네이버 로그인</a></dt>
+            <dd><a href="#">개요 API</a></dd>
+            <dd><a href="#">검수 가이드</a></dd>
+            <dd><a href="#">개발 가이드</a></dd>
+            <dd><a href="#">API 명세</a></dd>
+            <dd><a href="#">튜토리얼</a></dd>
+            <dd><a href="#">SDK 다운로드</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">파파고</a></dt>
+            <dd><a href="#">Papago 번역</a></dd>
+            <dd><a href="#">언어 감지</a></dd>
+            <dd><a href="#">한글인명-로마자 변환 </a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">서비스 API</a></dt>
+            <dd><a href="#">데이터랩</a></dd>
+            <dd><a href="#">검색</a></dd>
+            <dd><a href="#">단축URL</a></dd>
+            <dd><a href="#">캡차</a></dd>
+            <dd><a href="#">네이버 공유하기</a></dd>
+            <dd><a href="#">모바일앱 연동</a></dd>
+            <dd><a href="#">네이버 오픈메인</a></dd>
+        </dl>
+    </div>
+    <div class="depth">
+        <dl>
+            <dt><a href="#">내 애플리케이션</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">애플리케이션 등록</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">API 제휴 신청</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">계정 설정</a></dt>
+        </dl>
+    </div>
+    <div class="depth">
+        <dl>
+            <dt><a href="#">D2 PROGRAM</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">D2.NAVER.COM</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">네이버 오픈소스</a></dt>
+        </dl>
+        
+    </div>
+    <div class="depth">
+        <dl>
+            <dt><a href="#">공지사항</a></dt>
+        </dl>
+        <dl>
+            <dt><a href="#">라이선스 준수</a></dt>
+        </dl>
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+
+    $('.point > li').mouseenter(function(){
+        let depth_i = $(this).index();
+        if(depth_i < 5){
+            $('.depth').css({
+                display:'none'
+            }).eq($(this).index()).css({
+                display:'block'
+            })
+        }
+    });
+
+    $('.point > li').mouseleave(function(){
+        $('.depth').eq($(this).index()).css({
+            display:'none'
+        })
+    });
+
+    $('.depth').mouseenter(function(){
+        $('.depth').eq($(this).index()).css({
+            display:'block'
+        })
+        $('.point > li').eq($(this).index()).addClass('over')
+    });
+
+    $('.depth').mouseleave(function(){
+        $('.depth').eq($(this).index()).css({
+            display:'none'
+        })
+        $('.point > li').eq($(this).index()).removeClass('over')
+    });
+
+    $('.btn_search').click(function(){
+        $('.search').toggleClass('show');
+    });/*toggle = 설정을 해놓으면 설정한 요소를 ~함에 따라(지금은 .click으로 설정되어있어서 click을 하면)
+       설정한 대상요소가 보이고/꺼지고의 기능을 해준다. toggleClass는 Class명을 보이고/꺼지게 해준다.*/
+
+    // hide_menu 켜기
+    $('.btn_open').click(function(){
+        if($('.btn_open').hasClass('off')){
+            $('body').addClass('on')
+            $('.btn_open').removeClass('off').addClass('on')
+            $('.hide_back').show();
+            $('.hide_gnb').addClass('on');
+            $('.hide_menu').addClass('on');
+        } else {
+            $('body').removeClass('on')
+            $('.btn_open').removeClass('on').addClass('off')
+            $('.hide_back').hide();
+            $('.hide_gnb').removeClass('on');
+            setTimeout(function(){
+                $('.hide_menu').removeClass('on');
+            }, 300);
+        }
+    });
+    $('.hide_back').click(function(){
+        $('body').removeClass('on')
+        $('.btn_open').removeClass('on').addClass('off')
+        $('.hide_back').hide();
+        $('.hide_gnb').removeClass('on');
+        setTimeout(function(){
+                $('.hide_menu').removeClass('on');
+            }, 300);
+    });
+});
+</script>
+<!--//sub menu------------------------------------------------------------->
+<!--container-------------------------------------------------------------->
+<div class="container">
+
+    <!--main_silde------------------------------------------------------------->
+    <div class="main_slide">
+        <ul class="scene">
+            <li><img class="no1" src="img/main_slide/slide-1.png" alt="네이버클라우드플랫폼"></li>
+            <li><img class="no2" src="img/main_slide/slide-2.png" alt=""></li>
+            <li><img class="no3" src="img/main_slide/slide-3.png" alt=""></li>
+            <li><img class="no4" src="img/main_slide/slide-4.png" alt=""></li>
+        </ul>
+
+        <div class="dot">
+            <button class="on">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+    </div>
+        <!--<div class="dot">
+            <button class="btn1 on">1</button>
+            <button class="btn2">2</button>
+            <button class="btn3">3</button>
+            <button class="btn4">4</button>
+        </div>-->
+        <div class="prev">이전</div>
+        <div class="next">다음</div>
+    </div>
+    <!--//main_silde----------------------------------------------------------->  
+
+    <!--service---------------------------------------------------------------->
+    <div class="service">
+        <ul>
+            <li>
+                <a href="https://developers.naver.com/console/clova/" target="blank"><span>CLOVA</span></a>
+            </li>
+            <li>
+                <a href="https://developers.naver.com/products/login/api/api.md" target="blank"><span>네이버 로그인</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://developers.naver.com/products/papago/nmt/nmt.md" target="blank"><span>papago</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://developers.naver.com/products/service-api/datalab/datalab.md" target="blank"><span>서비스 API</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.ncloud.com/" target="blank"><span>네이버 클라우드 플랫폼</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--//service-------------------------------------------------------------->
+
+    <!--summary---------------------------------------------------------------->
+    <div class="summary">
+    <ul>
+            <li><a href="https://developers.naver.com/notice/article/9553">
+                <div class="img"></div>
+                <div class="text">
+                    <p>영화 서비스 API 지원 종료 안내 [23.3.31.예정]</p>
+                    <span>등록일</span>
+                    <span>조회수</span>
+                </div>
+            </a></li>
+            <li><a href="https://developers.naver.com/notice/article/9232">
+                <div class="img"></div>
+                <div class="text">
+                    <p>[네이버 로그인] '네이버 로그인 플러스' 오픈 안내</p>
+                    <span>등록일</span>
+                    <span>조회수</span>
+                </div>
+            </a></li>
+            <li><a href="https://developers.naver.com/notice/article/8595">
+                <div class="img"></div>
+                <div class="text">
+                    <p>블로그앱 글쓰기 URL Scheme 연동 지원 종료 안내</p>
+                    <span>등록일</span>
+                    <span>조회수</span>
+                </div>
+            </a></li>
+            <li><a href="https://developers.naver.com/notice/article/7791">
+                <div class="img"></div>
+                <div class="text">
+                    <p>카페앱 URL Scheme 연동 지원 종료</p>
+                    <span>등록일</span>
+                    <span>조회수</span>
+                </div>
+            </a></li>
+            
+            <a href="https://developers.naver.com/notice/" target="blank" class="view">
+            VIEW ALL
+            </a>
+            
+    </ul>
+    </div>
+    <!--//summary-------------------------------------------------------------->
+    <script src="js/main.js"></script>
+    <!--footer----------------------------------------------------------------->
+    <footer>
+        <div class="top">
+            <a href="https://developers.naver.com/products/terms/">이용약관</a>
+            <a href="https://policy.naver.com/policy/privacy.html">개인정보처리방침</a>
+            <a href="https://nid.naver.com/nidlogin.login?svctype=262144">제휴신청</a>
+            <a href="https://developers.naver.com/forum/list">개발자포럼</a>
+            <a href="https://recruit.navercorp.com/">개발자채용</a>
+        </div>
+        <div class="hidden">
+            <a href="https://developers.naver.com/products/terms/">로그인</a>
+            <a href="https://policy.naver.com/policy/privacy.html">개발자포럼</a>
+            <a href="https://nid.naver.com/nidlogin.login?svctype=262144">개발자채용</a>
+        </div>
+            <div class="menu">
+                <a href="https://www.naver.com/" class="logo"><span class="blind">naver</span></a>
+                <i>Copyright © </i>
+                <a href="https://www.navercorp.com/" class="corp">NAVER Corp.</a>
+                <i>All Rights Reserved.</i>
+        </div>
+    </footer>
+    <!--//footer-------------------------------------------------------------->
+
+</div>
+<!--//container------------------------------------------------------------>
+</head>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'NanumSquare-L';
+    src: url("../font/NanumSquareOTFLight.woff") format('woff2');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    src: url("../font/NanumSquareOTFRegular.woff") format('woff2');
+}
+@font-face {
+    font-family: 'NanumSquare-B';
+    src: url("../font/NanumSquareOTFBold.woff") format('woff2');
+}
+@font-face {
+    font-family: 'NanumSquare-EB';
+    src: url("../font/NanumSquareOTFExtraBold.woff") format('woff2');
+}
+@font-face{
+    font-family:'bitbit';
+    src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
+}
+@font-face {
+    font-family: 'TTWanjudaedunsancheB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+body, th, td, input, select, textarea, button {font-family: 'TTWanjudaedunsancheB';}
+
+::selection{background:red; color:#fff;}
