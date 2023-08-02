@@ -33,4 +33,9 @@ $(document).ready(function(){
     $('.hide').mouseleave(function(){
         $(this).find('.hide-menu').removeClass('on')
     })
+
+    //스와이퍼
+    var swiper = new Swiper(".content-1", {
+        loop : true,
+    });
 });
