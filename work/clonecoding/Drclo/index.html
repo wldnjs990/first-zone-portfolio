@@ -110,7 +110,7 @@
     .hide_btn.active span:nth-child(3){width: 33px; transform: translateY(-3px) rotate(-45deg);}
     /**/
     .hide_menu{opacity: 0; width: 100vw; height: 0vh; position: fixed; background: url(img/full_bg.jpg) no-repeat; background-size: cover; top: 0; padding: 0 60px; transition: all .3s;}
-    .hide_menu.on{opacity: 1; height: 100vh; z-index: 998;}
+    .hide_menu.on{opacity: 1; height: 100vh; z-index: 998; overflow-y: scroll;}
     .hide_menu.on .hide_gnb{display: block;}
     .hide_menu.on .full_board{display: block;}
     .header_wrap.on .logo_n{display: none;}
@@ -203,8 +203,8 @@
     .links li.rd::after{margin-top: 6px;}
     /*--p-----------*/
     .footer .copyright{
-        width: 200px; font-size: 13px; float: left; text-align: right;
-        text-transform: uppercase; padding-top: 3px;
+        width: 200px; font-size: 12px; float: left; text-align: right;
+        text-transform: uppercase;
     }
     /*media*/
     @media screen and (max-width:1400px) {
