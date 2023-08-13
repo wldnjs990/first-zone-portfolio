@@ -35,9 +35,25 @@ $(document).ready(function(){
     })
 
     //스와이퍼
-    var swiper = new Swiper(".content-1", {
+    var swiper1 = new Swiper(".content-1", {
         loop : true,
+        pagination: {
+            el: ".c-1-progress",
+            type : 'progressbar',
+        },
+        navigation: {
+            nextEl: ".c-1-next",
+            prevEl: ".c-1-prev",
+        },
     });
+    var swiper1_1 = new Swiper(".content-1", {
+        pagination: {
+            el: ".c-1-paging",
+            type: "fraction"
+        },
+    });
+    swiper1.controller.control = swiper1_1;
+    
     var swiper2 = new Swiper(".item-wrap", {
         loop : true,
         slidesPerView: 4,
@@ -46,7 +62,7 @@ $(document).ready(function(){
         loop : true,
         slidesPerView: 4,
     });
-    var swiper3 = new Swiper(".commend-swipe", {
+    var swiper4 = new Swiper(".commend-swipe", {
         loop : true,
         slidesPerView: 5,
     });
@@ -97,5 +113,17 @@ $(document).ready(function(){
         $(this).addClass('on');
         $('.new-list').removeClass('on');
         $('.new-list').eq(idx).addClass('on');
+    })
+    /* 스크롤 탑 메뉴 활성화 */
+    $(window).scroll(function(){
+        let scrollevent = $(this).scrollTop();
+        if(scrollevent > 0){
+            $('.go-top').addClass('on')
+        } else {
+            $('.go-top').removeClass('on')
+        }
+    });
+    $('.go-top').click(function(){
+        $(window).scrollTop(0);
     })
 });
