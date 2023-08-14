@@ -5,9 +5,29 @@
     padding: 20px 0;
 }
 .more{
-    height: 310px; display: flex; align-items: center; padding: 0 20px;
+    max-height: 310px; display: flex; align-items: center; padding: 0 20px;
 }
-.more a{display: block;}
+.more > a{display: block;}
+.more-box{padding-right: 100px;}
+.more-box .swiper-wrapper .swiper-slide > a > img{border-radius: 5px;}
+/**/
+.pro-text .comp-name{margin-top: 5px; font-size: 10px; font-weight: bold; color: rgb(77, 116, 255);}
+.pro-text .pro-name{margin-top: 5px; font-size: 11px; font-weight: bold;}
+.pro-text .sale{margin-top: 5px; display: flex; align-items: center; gap: 10px;}
+.pro-text .sale .percent{
+    font-size: 14px; font-weight: bold; color: rgb(239, 36, 90);
+}
+.pro-text .sale .discount{
+    font-size: 10px; color: #888; text-decoration: line-through;
+}
+.pro-text .price{margin-top: 5px; font-size: 15px; font-weight: bold;}
+.pro-text .option{
+    margin-top: 5px; display: flex; gap: 2px; align-items: center;
+}
+.pro-text .option > div{
+}
+.pro-text .option > div > img{
+}
 /* 공통 */
 body{background: #888; height: 3000px;}
 #wrap{min-width: 360px; max-width: 720px; margin:0 auto; background: #fff;}
@@ -19,15 +39,14 @@ body{background: #888; height: 3000px;}
 .header .menu-bar li a{display: block; text-decoration: none; color: #888;}
 .header .menu-bar li.on{border-bottom: solid 2px #111; font-weight: bold;}
 .header .menu-bar li.on a{color: #111;}
-.content-wrap .main-banner .wrap-1 .slide-1 a img{object-fit: cover; width: 100%; height: 100%;}
+.content-wrap .main-banner .wrap-1 .slide-1 > a > img{
+    object-fit: cover; width: 100%; height: 100%;
+}
 .content-wrap .products{padding-left: 16px;}
-.content-wrap .products .pro-box-1 .special{
-    padding-right: 100px;
+.content-wrap .products .pro-box-1 .special .wrap-2 .slide-2 > a > img{
+    width: 100%; height: 100%; object-fit: cover;
 }
-.content-wrap .products .pro-box-1 .special .wrap-2{
-    position: relative;
+.content-wrap .products .pro-box-2 .new .wrap-3 .slide-3 > a > img{
+    width: 100%; 
 }
-.content-wrap .products .pro-box-1 .special .wrap-2 .slide-2{
-    overflow: hidden; border-radius: 30px;
-}
-.content-wrap .products .pro-box-1 .special .wrap-2 .slide-2 a img{width: 100%; height: 100%; object-fit: cover;}
+
