@@ -1,5 +1,8 @@
 @charset "UTF8";
 /* 공통 */
+body{
+    background: rgb(248, 248, 248);
+}
 .con-title{
     font-size: 17px; font-weight: bold;
     padding: 30px 0 10px;
@@ -37,20 +40,34 @@
 }
 .pro-text .option > div > img{
 }
-.radious > a > img{
-    border-radius: 5px; object-fit: cover;
+.radious > a .img-wrap{
+    border-radius: 5px; overflow: hidden;
+}
+.radious > a .img-wrap > img{
+    object-fit: cover;
+}
+.box > a .img-wrap{position: relative;}
+.box > a .img-wrap > img{
+    width: 100%; object-fit: cover;
+}
+.box > a .img-wrap > span{
+    width: 100%; height: 18px; line-height: 18px; position: absolute;
+    bottom: 0; left: 0; font-size: 10px; text-align: center;
+    background: #333333d7; color: #fff;
 }
 /* //공통 */
-body{background: #888; height: 3000px;}
 #wrap{min-width: 360px; max-width: 720px; margin:0 auto; background: #fff;}
 .header{position: sticky; top: 0; background: #fff; z-index: 999;}
 .header .header-top{display: flex; justify-content: space-between; padding: 16px;}
 .header .header-top .icon{display: flex; gap:16px;}
 .header .menu-bar{display: flex;}
 .header .menu-bar li{width:calc(100% / 3); height: 55px; line-height: 55px; text-align: center;}
-.header .menu-bar li a{display: block; text-decoration: none; color: #888;}
-.header .menu-bar li.on{border-bottom: solid 2px #111; font-weight: bold;}
+.header .menu-bar li a{display: block; text-decoration: none; color: #888; font-weight: bold}
+.header .menu-bar li.on{border-bottom: solid 2px #111;}
 .header .menu-bar li.on a{color: #111;}
+.content-wrap{
+    padding-bottom: 15px;
+}
 .content-wrap .main-banner .wrap-1 .slide-1 > a > img{
     object-fit: cover; width: 100%; height: 100%;
 }
@@ -161,4 +178,61 @@ body{background: #888; height: 3000px;}
 }
 .content-wrap .products .pro-ice .ice-wrap .ice-list > a > img{
     width: 100%; object-fit: cover;
+}
+/*  */
+.footer{
+    padding: 24px 16px 40px; background: #eeeeee;
+}
+.footer .policy-panel{
+    display: flex; gap: 15px; font-size: 12px; font-weight: bold;
+}
+.footer .company-info{
+    margin-top: 20px; font-size: 10px; color: #666;
+}
+.footer .company-info .call{
+    display: flex; gap: 15px;
+}
+.footer .company-info .call > span{
+    position: relative;
+}
+.footer .company-info .call > span::after{
+    content: ''; width: 1px; height: 10px; display: block; background: #666;
+    position: absolute; top: 2px; right: -8px;
+}
+.footer .company-info .call > span:last-child::after{
+    display: none;
+}
+.footer .terms{
+    margin-top: 20px; font-size: 10px; letter-spacing: -.5px; color: #888;
+}
+.footer .copyright{
+    margin-top: 20px; font-size: 10px;  color: #888;
+}
+/*  */
+.foot-nav{
+    position: sticky; bottom: 0; z-index: 99;
+    box-shadow: 0px 2px 5px 0px #333;
+}
+.foot-nav nav{
+    background: #fff;
+}
+.foot-nav nav .nav-wrap{
+    display: flex;
+}
+.foot-nav nav .nav-wrap li{
+    width: calc(100% / 4); height: 60px; 
+    display: flex; justify-content: center; align-items: center;
+}
+.foot-nav nav .nav-wrap li > a{
+    width: 100%; height: 100%;
+    display: flex; flex-flow: column; justify-content: center; align-items: center;
+}
+.foot-nav nav .nav-wrap li > a img{
+    text-align: center;
+}
+.foot-nav nav .nav-wrap li > a p{
+    text-align: center; font-size: 11px; color: rgb(153, 153, 153);
+}
+.foot-nav nav .nav-wrap li.on > a p{
+    color:rgb(239, 36, 90);
 }
