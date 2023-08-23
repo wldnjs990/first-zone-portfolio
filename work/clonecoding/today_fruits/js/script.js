@@ -1,6 +1,10 @@
 $(document).ready(function(){
     var swiper1 = new Swiper(".main-banner", {
         loop : true,
+        pagination : {
+            el : ".swiper-pagination",
+            type : "fraction",
+        }
     });
 
     var swiper2 = new Swiper(".special", {
