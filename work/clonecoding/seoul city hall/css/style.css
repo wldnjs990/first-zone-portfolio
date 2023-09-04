@@ -1,0 +1,32 @@
+@charset "UTF-8";
+body{}
+.wrap{position: relative; height: 3000px;}
+.inner{width: 1151px; margin: 0 auto;}
+/*  */
+.top-banner{width: 100%; height: 91px; text-align: center; overflow-x: hidden; border-bottom: solid 1px #eaeaea;}
+.top-banner > a{display: block; width: 100%; height: 100%; position: relative;}
+.top-banner > a > img{position: absolute; top: 0; left: 50%; transform: translateX(-50%);}
+/*  */
+.header .top-line{display: flex; padding-top: 8px;}
+.header .top-line > a{
+    width: 105px; height: 27px; display: block; font-size: 0;
+    background: url(../img/header/icon_set_common.png) no-repeat -5px -165px;
+}
+.header .top-line > nav > .header-nav{
+    height: 100%; display: flex; gap: 17px; margin-left: 63px;
+}
+.header .top-line > nav > .header-nav > li > a{
+    letter-spacing: -1px; font-size: 16px; font-weight: bold; line-height: 31px;
+}
+.header .top-line > nav > .header-nav > li > a:hover{
+    color: rgb(103, 176, 255);
+}
+.header .top-line .my-link{
+    display: flex; gap: 17px; margin-left: auto; margin-right: 10px;
+}
+.header .top-line .my-link > li > a{
+    font-size: 14px; font-weight: bold; letter-spacing: -1px; line-height: 31px;
+}
+.header .top-line .my-link > li > a:hover{
+    color: rgb(103, 176, 255);
+}
