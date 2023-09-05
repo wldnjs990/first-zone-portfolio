@@ -30,3 +30,48 @@ body{}
 .header .top-line .my-link > li > a:hover{
     color: rgb(103, 176, 255);
 }
+/*  */
+.st-con-wrap{display: flex; flex-flow: column;}
+.st-con-wrap .language{
+    margin-left: auto; margin-top: 10px;
+    margin: 10px 0 5px auto;
+}
+.st-con-wrap .language > form{
+    display: flex;
+}
+.st-con-wrap .language > form > select{
+    border: solid 1px rgb(116, 140, 214);
+    font-size: 12px; color: rgb(103, 176, 255);
+    width: 80px; height: 20px;
+}
+.st-con-wrap .language > form .lan-link{
+    font-size: 12px; color: #fff; background: rgb(1, 75, 154); 
+    padding: 1px 5px; border: solid 1px rgb(116, 140, 214);
+}
+.st-con-wrap .api-line{height: 93px; display: flex; align-items: center;}
+.st-con-wrap .api-line .slogan{
+    margin: 12px 0 30px;
+}
+.st-con-wrap .api-line .search-bar{
+    margin-left: 117px;
+}
+.st-con-wrap .api-line .search-bar > form{
+    display: flex; position: relative; margin-bottom: 23px;
+    border: solid 3px rgb(103, 176, 255) !important;
+    width: 520px; height: 42px;
+}
+.st-con-wrap .api-line .search-bar > form > input{
+    width: 472px; height: 42px; font-size: 14px; color: #707070;
+    padding: 0 10px 5px; 
+}
+.st-con-wrap .api-line .search-bar > form > img{
+    width: 30px; height: 15px;
+    position: absolute; left: 442px; top: 50%; transform: translateY(-50%);
+}
+.st-con-wrap .api-line .search-bar > form .search-btn{
+    font-size: 0; display: block; width: 35px; height: 40px; margin-left: auto;
+    background: url(../img/header/icon_set_common.png)no-repeat -32px -97px;
+}
+.st-con-wrap .api-line .weather{
+    margin-left: auto; display: flex;
+}
