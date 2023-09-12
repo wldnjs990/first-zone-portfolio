@@ -2,6 +2,9 @@
 body{}
 .wrap{position: relative; height: 3000px;}
 .inner{width: 1151px; margin: 0 auto;}
+.title{
+    font-size: 22px; font-weight: bold; display: flex; align-items: center; padding-bottom: 13px;
+}
 /*  */
 .top-banner{width: 100%; height: 91px; text-align: center; overflow-x: hidden; border-bottom: solid 1px #eaeaea;}
 .top-banner > a{display: block; width: 100%; height: 100%; position: relative;}
@@ -131,13 +134,166 @@ body{}
     background: #000000a1; color: #fff;
 }
 .nd-con-wrap .mayor{
-    width: 360px;
+    width: 360px; display: flex; flex-flow: column; gap: 10px;
 }
 .nd-con-wrap .mayor .daily-news{
-    width: 100%;
+    width: 100%; position: relative;
 }
 .nd-con-wrap .mayor .daily-news > a{
     height: 250px; display: block;
     background: url(../img/nd-con-wrap/MAYORNEWS_20230831094506_59903.jpg)no-repeat center;
     background-size: auto 100%;
+}
+.nd-con-wrap .mayor .daily-news > span{
+    position: absolute; width: 100%; bottom: 0;
+    height: 40px; line-height: 40px;
+    font-size: 14px; letter-spacing: -1.3px; font-weight: bold; text-align: center;
+    background: #000000a1; color: #fff;
+}
+.nd-con-wrap .mayor .mayor-menu{
+    position: relative;
+}
+.nd-con-wrap .mayor .mayor-menu .mayor-link{
+    position: absolute; top: 18px; right: 14px;
+    width: 110px; height: 30px;
+    background: url(../img/nd-con-wrap/btn-mayorlink0.png);
+}
+.nd-con-wrap .mayor .mayor-menu .mayor-list{
+    position: absolute; bottom: 0;
+    width: 100%; display: flex; justify-content: space-around;
+}
+.nd-con-wrap .mayor .mayor-menu .mayor-list li{
+    width: calc(100% / 4 - 1px); background: #8b7153;
+    font-size: 12px; letter-spacing: -1px;
+}
+.nd-con-wrap .mayor .mayor-menu .mayor-list li a{
+    color: #fff; display: block;
+    width: 100%; height: 26px; line-height: 26px; text-align: center;
+}
+.rd-con-wrap{margin-top: 50px;}
+.rd-con-wrap .title{
+    border-bottom: solid 1px #ddd;
+}
+.rd-con-wrap .title > a{
+    font-size: 15px; margin-left: 30px; padding: 3px 10px; 
+    font-weight: 400; background: #fff; display: inline-block;
+    border: 1px solid #ddd;
+}
+.rd-con-wrap .service-list{
+    width: 100%; margin-top: 20px; display: flex; justify-content: space-between;
+}
+.rd-con-wrap .service-list > li{
+    width: calc(100% / 12); text-align: center;
+}
+.rd-con-wrap .service-list > li > a{
+    width: 100%; font-size: 15px; letter-spacing: -2.4px;
+}
+.rd-con-wrap .service-list > li > a .icon{
+    width: 60px; height: 60px; display: block; margin: 0 auto 10px;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-1{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -360px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-2{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat 0px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-3{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -120px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-4{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -300px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-5{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -180px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-6{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -960px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-7{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -780px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-8{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -1140px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-9{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -1020px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-10{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -60px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-11{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -1080px 0;
+}
+.rd-con-wrap .service-list > li > a .icon.icon-12{
+    background: url(../img/rd-con-wrap/icon_set_service_202205.png)no-repeat -600px 0;
+}
+.th-con-wrap{
+    width: 100%; height: 110px;
+    background: #eff4f8; margin-top: 35px;
+    display: flex; align-items: center;
+}
+.th-con-wrap .seoul-menu{display: flex;}
+.th-con-wrap .seoul-menu > li{
+    border-right: solid 1px #aeaeae;
+}
+.th-con-wrap .seoul-menu > li:last-child{
+    border-right: none;
+}
+.th5-con-wrap{
+    margin-top: 50px; padding-bottom: 50px;
+    border-bottom: solid 2px #000;
+    display: flex; gap: 40px;
+}
+.th5-con-wrap > div{width: calc(100% / 3 - 80px / 3);}
+/* link 공통 */
+.th5-con-wrap .title.line{border-bottom: solid 2px #ddd;}
+.th5-con-wrap .title.line > a{
+    width: 22px; height: 20px;
+    background: url(../img/header/icon_set_common.png)no-repeat -1px -1px;
+    margin-left: auto; border: solid 1px #ddd;
+}
+.th5-con-wrap .link{
+    display: flex; flex-flow: column; gap: 10px; margin-top: 20px;
+}
+.th5-con-wrap .link li{
+    width: 100%; display: flex;
+}
+.th5-con-wrap .link li > span{width: 12%;}
+.th5-con-wrap .link li .administrate{color: #028ab6;}
+.th5-con-wrap .link li .walfare{color: #d76000;}
+.th5-con-wrap .link li .traffic{color: #337ee2;}
+.th5-con-wrap .link li .house{color: #c35c3c;}
+.th5-con-wrap .link li .enviroment{color: #599100;}
+.th5-con-wrap .link li .culture{color: #9b64d3;}
+.th5-con-wrap .link li > a{
+    width: 88%;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* link 공통 */
+.th5-con-wrap .service .service-link{
+    display: flex; flex-flow: row wrap;
+    padding: 17px 0px; background: #eff4f8;
+}
+.th5-con-wrap .service .service-link li{
+    width: calc(100% / 2); position: relative;
+    margin-bottom: 10px; padding-left: 28px;
+}
+.th5-con-wrap .service .service-link li::before{
+    content: ''; width: 2px; height: 2px;
+    background: #000; display: block;
+    position: absolute; top: 50%; left: 15px;
+}
+.th5-con-wrap .service .service-link li > a{
+    font-size: 14px; display: block;
+}
+.th6-con-wrap{margin-top: 40px;}
+.th6-con-wrap .info-list{display: flex; align-items: center;}
+.th6-con-wrap .info-list li{
+    width: calc(100% / 8); text-align: center;
+}
+.th6-con-wrap .info-list li > a > p{
+    margin-top: 10px;
+}
+.th7-con-wrap{
+    margin-top: 50px;
 }
