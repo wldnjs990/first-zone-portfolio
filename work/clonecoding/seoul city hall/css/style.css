@@ -297,3 +297,68 @@ body{}
 .th7-con-wrap{
     margin-top: 50px;
 }
+.th7-con-wrap .title .more-link{
+    font-size: 16px; font-weight: 400; color: #919191; margin-left: auto;
+}
+.th7-con-wrap .title .more-link i{
+    font-size: 24px; line-height: 20px; font-weight: bold;
+}
+.th7-con-wrap .news-wrap{
+    margin-top: 10px;
+}
+.th7-con-wrap .news-wrap .news-list{
+    display: flex; flex-flow: row wrap; gap: 20px;
+}
+.th7-con-wrap .news-wrap .news-list > li{
+    width: calc(100% / 4 - 60px / 4);
+}
+.th7-con-wrap .news-wrap .news-list > li > a .img-box{
+    position: relative; overflow: hidden;
+}
+.th7-con-wrap .news-wrap .news-list > li > a .img-box > img{
+    width: 100%; transition: all .3s;
+}
+.th7-con-wrap .news-wrap .news-list > li > a .img-box > img:hover{
+    transform: scale(1.1);
+}
+.th7-con-wrap .news-wrap .news-list > li > a .img-box > span{
+    position: absolute; bottom: 0; left: 0;
+    padding: 7px 28px; color: #fff;
+    font-size: 13px; font-weight: bold;
+}
+.th7-con-wrap .news-wrap .news-list > li > a .img-box .green{
+    background: #599100;
+}
+.th7-con-wrap .news-wrap .news-list > li > a .img-box .orange{
+    background: rgb(255, 128, 0);
+}
+.th7-con-wrap .news-wrap .news-list > li > a .img-box .blue{
+    background: #028ab6;
+}
+.th7-con-wrap .news-wrap .news-list > li > a > p{
+    margin-top: 15px;
+}
+.th8-con-wrap{
+    margin-top: 40px; margin-bottom: 20px; display: flex; gap: 20px;
+}
+.th8-con-wrap .seoul-news{
+    width: 480px; height: 196px; position: relative;
+}
+.th8-con-wrap .seoul-news > ul{
+    width: 100%; margin: 10px 0;
+}
+.th8-con-wrap .seoul-news > ul > li{
+    margin-bottom: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.th8-con-wrap .seoul-news > ul > li > a .left-text{
+    color: #599100; margin-right: 20px; letter-spacing: -1px;
+}
+.th8-con-wrap .seoul-sns{
+    width: 350px; background: url(../img/th8-con-wrap/bg_sns_list_202205.gif)no-repeat;
+}
+.th8-con-wrap .seoul-sns > a{
+    width: 100%; height: 100%; display: block;
+}
+.th8-con-wrap .seoul-sns > a .title{
+    padding: 10px 15px;
+}
