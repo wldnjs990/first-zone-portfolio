@@ -2,7 +2,6 @@ $(document).ready(function(){
 
     const swiper1 = new Swiper('.swipe-1', {
       loop : true,
-      spaceBetween: 40,
       pagination: {
         el : ".swiper-pagination-1",
         type : "fraction",
@@ -24,6 +23,20 @@ $(document).ready(function(){
         nextEl: ".next-2",
         prevEl: ".prev-2",
       },
+    });
+    /*menu-bar*/
+    $('.hide-over').hide()
+    $('.menu-btn').click(function(){
+      if($(this).hasClass('off')){
+        $('.menu-btn').removeClass('on').addClass('off')
+        $('.hide-over').show()
+        $(this).removeClass('off').addClass('on')
+      } else {
+        $(this).removeClass('on').addClass('off')
+        setTimeout(function(){
+          $('.hide-over').hide()
+        }, 100) 
+      }
     });
     
 });
